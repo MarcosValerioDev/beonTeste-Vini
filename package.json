@@ -1,0 +1,49 @@
+{
+    "name": "bn.tenant.custom.base",
+    "version": "1.0.0",
+    "description": "Beon components customization.",
+    "main": "server.js",
+    "scripts": {
+        "init": "git submodule init && git submodule update --remote && cd ./src/base && npm ci && cd ../../ && npm install",
+        "build": "gulp build",
+        "publish": "npm run build",
+        "dev": "gulp dev & nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:beonica/bn.tenant.custom.base.git"
+    },
+    "keywords": [
+        "beon",
+        "pusher",
+        "xmlhttprequest"
+    ],
+    "author": "Bruno Possidonio",
+    "license": "ISC",
+    "homepage": "https://github.com/beonica/bn.tenant.custom.base",
+    "dependencies": {
+        "uuid": "^3.3.2"
+    },
+    "devDependencies": {
+        "babel-minify-webpack-plugin": "^0.3.1",
+        "body-parser": "^1.18.3",
+        "browser-sync": "^2.27.5",
+        "clean-webpack-plugin": "^0.1.19",
+        "cookie-parser": "^1.4.3",
+        "eslint": "^8.0.0",
+        "express": "^4.16.3",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "gulp-csso": "^3.0.1",
+        "gulp-sass": "^5.0.0",
+        "html-webpack-plugin": "^3.2.0",
+        "morgan": "^1.9.1",
+        "node-sass": "^6.0.1",
+        "node-uuid": "^1.4.8",
+        "sass": "^1.42.1",
+        "tiny-slider": "^2.9.2",
+        "webpack": "^5.15.0",
+        "webpack-merge": "^4.1.4",
+        "webpack-stream": "^7.0.0"
+    }
+}

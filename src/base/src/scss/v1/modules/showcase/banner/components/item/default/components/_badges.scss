@@ -1,0 +1,30 @@
+.beon-showcase__item-badges {
+  display: flex;
+
+  @include for-desktop-up {
+  }
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  flex-direction: column;
+  align-items: flex-end;
+
+  .beon-showcase__item-badge {
+    position: relative;
+    top: unset;
+    bottom: unset;
+    left: unset;
+    right: unset;
+
+    width: 37px;
+    padding: 1px 5px;
+    margin-bottom: 4px;
+    border-radius: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    text-align: center;
+  }
+}

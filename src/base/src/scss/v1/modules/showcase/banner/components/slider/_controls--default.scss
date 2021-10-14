@@ -1,0 +1,88 @@
+& {
+  .tns-controls {
+    display: none;
+
+    @include for-desktop-up {
+      display: block;
+
+      button[data-controls] {
+        top: 50%;
+        transform: translate3d(0, 0, 40%);
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        padding: 0;
+
+        font-size: 0;
+        text-indent: 0;
+
+        background-color: transparent;
+        background-image: none;
+        box-shadow: none;
+
+        &:before {
+          font-family: Arial;
+          font-size: 20px;
+          line-height: 20px;
+          color: #666;
+          font-weight: lighter;
+          opacity: 1;
+
+          transition: all 0.1s ease-out;
+        }
+      }
+
+      [data-controls="prev"] {
+        left: -30px;
+
+        &:before {
+          content: "\027F5";
+          padding-right: 2px;
+        }
+
+        &:hover {
+          &:before {
+            padding-right: 15px;
+          }
+        }
+      }
+
+      [data-controls="next"] {
+        right: -30px;
+
+        &:before {
+          content: "\027F6";
+          padding-left: 2px;
+        }
+
+        &:hover {
+          &:before {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .tns-nav {
+    height: 30px;
+
+    @include for-tablet-portrait-up {
+      position: absolute;
+      bottom: 10px;
+    }
+
+    button[data-nav] {
+      width: 8px;
+      height: 8px;
+      margin: 0 3px;
+      box-sizing: border-box;
+      background-color: #acacac;
+
+      &.tns-nav-active {
+        background-color: #485769;
+        box-shadow: none;
+      }
+    }
+  }
+}

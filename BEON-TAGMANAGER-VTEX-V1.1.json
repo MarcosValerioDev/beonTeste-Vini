@@ -1,0 +1,532 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-05-19 18:01:06",
+    "containerVersion": {
+        "path": "accounts/409757/containers/32165129/versions/0",
+        "accountId": "409757",
+        "containerId": "32165129",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/409757/containers/32165129",
+            "accountId": "409757",
+            "containerId": "32165129",
+            "name": "[NEW] OffPriceMOB",
+            "publicId": "GTM-T7NM3ZH",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1615203466684",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/409757/containers/32165129/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "tagId": "57",
+                "name": "beon_event_tag",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventValue",
+                        "value": "{{beon_event_value}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "beon"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{beon_event_action}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{beon_event_label}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-00000000-0"
+                    }
+                ],
+                "fingerprint": "1621277791422",
+                "firingTriggerId": [
+                    "55"
+                ],
+                "parentFolderId": "52",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "tagId": "60",
+                "name": "beon_tag_loader",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script type=\"text/javascript\">\n    (function(i, s, o, g, r, a, m, d) {\n        i['beonobject'] = r;\n        i[r] = i[r] || function() {\n            (i[r].q = i[r].q || []).push(arguments)\n        }, i[r].l = 1 * new Date();\n        a = s.createElement(o),\n            m = s.getElementsByTagName(o)[0];\n        a.async = 1;\n        a.src = g;\n        a.setAttribute('data-cookiedomain', d);      \n        a.id = 'beon-' + r;\n        m.parentNode.insertBefore(a, m)\n    })(window, document, 'script', 'https://c.usebeon.io/loader/v4.js', 'beon', null, null, 'offpricemob.com.br');\n\n  \tbeon('create', 'bce9c53e-4e2c-4891-b8dc-4cec5579247c', 'vtex');\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1621277960325",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "parentFolderId": "52",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "tagId": "62",
+                "name": "beon_track_tag",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script type=\"text/javascript\">\n  \"use strict\";\n  \n  var event = {{beon_sp_gtm_event}};\n  \n  if (event === \"beon_async_track_page\") {\n    beon('track', 'pageview', {{beon_sp_current_view}});\n    \n  } else if (['homeView'].indexOf(event) > -1) {\n    beon('track', 'pageview', 'homepage');\n\n  } else if (['productView'].indexOf(event) > -1) {\n    beon('track', 'pageview', 'product');\n\n  } else if (['categoryView', 'departmentView'].indexOf(event) > -1) {\n    beon('track', 'pageview', 'catalog');\n\n  } else if (['cart'].indexOf(event) > -1) {\n    beon('track', 'pageview', 'cart');\n\n  } else if (['email', 'profile', 'payment'].indexOf(event) > -1) {\n    beon('track', 'pageview', 'checkout');\n\n  } else if (['orderPlaced'].indexOf(event) > -1) {\n    beon('track', 'pageview', 'transaction');\n\n  } else if (['otherView'].indexOf(event) > -1 && document.getElementsByTagName(\"body\")[0].className.match(/404/)) {\n    beon('track', 'pageview', 'notfound');\n\n  } else if (['internalSiteSearchView'].indexOf(event) > -1) { \n    beon('track', 'pageview', 'search');\n    \n  } else if (['otherView'].indexOf(event) > -1) { \n      /* cluster views */ \n      if (/productClusterSearchableIds/i.test({{beon_sp_pagefacets}}.join(','))) {\n        beon('track', 'pageview', 'catalog');\n      } else {\n        beon('track', 'pageview', 'other');\n      }\n  } else {\n    beon('track', 'pageview', 'other');\n  }\n\n // cart_update\n//  if (['cart','email','profile','shipping','payment'].indexOf(event) > -1) {\n//    var custom = function(data){};\n//    beon('track', 'cart');\n//  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1621446415145",
+                "firingTriggerId": [
+                    "59",
+                    "64"
+                ],
+                "parentFolderId": "52",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "triggerId": "55",
+                "name": "beon_event_trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "beon_gaevent"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1621277791421",
+                "parentFolderId": "52"
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "triggerId": "59",
+                "name": "beon_track_trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "(homeView|productView|categoryView|departmentView|otherView|internalSearchView|cart|shipping|payment|profile|orderPlaced|internalSiteSearchView|otherView)"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1621292194437",
+                "parentFolderId": "52"
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "triggerId": "64",
+                "name": "beon_track_async_trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "beon_async_track_page"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1621446007394",
+                "parentFolderId": "52"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "53",
+                "name": "beon_event_value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventValue"
+                    }
+                ],
+                "fingerprint": "1621277791420",
+                "parentFolderId": "52",
+                "formatValue": {}
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "54",
+                "name": "beon_event_action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventAction"
+                    }
+                ],
+                "fingerprint": "1621277791420",
+                "parentFolderId": "52",
+                "formatValue": {}
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "56",
+                "name": "beon_event_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventLabel"
+                    }
+                ],
+                "fingerprint": "1621277791422",
+                "parentFolderId": "52",
+                "formatValue": {}
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "58",
+                "name": "beon_sp_pagefacets",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "pageFacets"
+                    }
+                ],
+                "fingerprint": "1621446854600",
+                "parentFolderId": "52",
+                "formatValue": {}
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "61",
+                "name": "beon_sp_gtm_event",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event"
+                    }
+                ],
+                "fingerprint": "1621446827749",
+                "parentFolderId": "52",
+                "formatValue": {}
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "65",
+                "name": "beon_sp_current_view",
+                "type": "remm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{beon_sp_pagecategory}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fullMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "replaceAfterMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "other"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ignoreCase",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "home"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "homepage"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "product"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "product"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "catalog"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "department"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "catalog"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "buscavazia"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "notfound"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "404"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "notfound"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1621447118408",
+                "parentFolderId": "52",
+                "formatValue": {}
+            },
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "variableId": "66",
+                "name": "beon_sp_pagecategory",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "pageCategory"
+                    }
+                ],
+                "fingerprint": "1621446899312",
+                "parentFolderId": "52",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "409757",
+                "containerId": "32165129",
+                "folderId": "52",
+                "name": "beon",
+                "fingerprint": "1621277791418"
+            }
+        ],
+        "fingerprint": "1621447266288",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/409757/containers/32165129/versions/0?apiLink=version"
+    }
+}

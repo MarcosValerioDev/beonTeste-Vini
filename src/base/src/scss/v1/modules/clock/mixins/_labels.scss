@@ -1,0 +1,82 @@
+@mixin bn-clock--without-labels {
+  .beon-clock__fragment,
+  .bn-clock__frag {
+    padding-bottom: 0;
+
+    &:before {
+      display: none;
+      height: 0;
+    }
+  }
+}
+
+@mixin bn-clock--with-labels {
+  $clock-label-height: 16px;
+
+  .beon-clock__fragment,
+  .bn-clock__frag {
+    padding-bottom: $clock-label-height;
+
+    &:before {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: $clock-label-height;
+      bottom: 0;
+      font-size: 10px;
+      font-family: sans-serif;
+      line-height: $clock-label-height;
+      text-transform: uppercase;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    &.beon-clock__fragment-d:before,
+    &.bn-clock__frag-d:before {
+      content: "dias";
+    }
+    &.beon-clock__fragment-H:before,
+    &.bn-clock__frag-H:before {
+      content: "hrs";
+    }
+    &.beon-clock__fragment-i:before,
+    &.bn-clock__frag-i:before {
+      content: "min";
+    }
+    &.beon-clock__fragment-s:before,
+    &.bn-clock__frag-s:before {
+      content: "seg";
+    }
+  }
+}
+
+@mixin bn-clock--with-labels-compact {
+  $clock-label-height: 12px;
+
+  .beon-clock__fragment,
+  .bn-clock__frag {
+    padding-bottom: 0;
+
+    &:before {
+      bottom: -$clock-label-height;
+      font-size: 8px;
+    }
+
+    &.beon-clock__fragment-d:before,
+    &.bn-clock__frag-d:before {
+      content: "d";
+    }
+    &.beon-clock__fragment-H:before,
+    &.bn-clock__frag-H:before {
+      content: "h";
+    }
+    &.beon-clock__fragment-i:before,
+    &.bn-clock__frag-i:before {
+      content: "m";
+    }
+    &.beon-clock__fragment-s:before,
+    &.bn-clock__frag-s:before {
+      content: "s";
+    }
+  }
+}

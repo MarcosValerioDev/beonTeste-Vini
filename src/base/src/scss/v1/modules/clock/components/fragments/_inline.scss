@@ -1,0 +1,47 @@
+@import "./_with-labels.scss";
+
+.beon-clock--inline {
+  .beon-clock__fragments {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    line-height: inherit;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    font-size: 1em;
+    font-family: serif;
+    color: inherit;
+
+    /* always with labels */
+    @extend %beon-clock--with-labels;
+    @extend %beon-clock--with-labels-extended;
+  }
+
+  .beon-clock__fragment {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    color: inherit;
+    line-height: inherit;
+
+    &:after {
+      display: inline;
+      padding-left: 5px;
+    }
+
+    &:not(.beon-clock__fragment-d):before {
+      display: inline;
+      content: ",";
+      padding-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+$clock-label-height: 20px;
+
+%beon-clock--with-labels {
+  .beon-clock__fragment {
+    padding-bottom: $clock-label-height;
+
+    &:before {
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: 0;
+      font-size: 0.8em;
+      font-family: sans-serif;
+      line-height: $clock-label-height;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    &.beon-clock__fragment-d:before {
+      content: "dias";
+    }
+    &.beon-clock__fragment-H:before {
+      content: "hrs";
+    }
+    &.beon-clock__fragment-i:before {
+      content: "min";
+    }
+    &.beon-clock__fragment-s:before {
+      content: "seg";
+    }
+  }
+}
+
+%beon-clock--with-labels-extended {
+  .beon-clock__fragment {
+    &.beon-clock__fragment-d:before {
+      content: " dias";
+    }
+    &.beon-clock__fragment-H:before {
+      content: " horas";
+    }
+    &.beon-clock__fragment-i:before {
+      content: " minutos";
+    }
+    &.beon-clock__fragment-s:before {
+      content: " segundos";
+    }
+  }
+}

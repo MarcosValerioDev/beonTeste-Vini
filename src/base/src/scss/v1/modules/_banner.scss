@@ -1,0 +1,16 @@
+.beon-banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  clear: both;
+
+  .beon-banner__container {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+@import "./banner/_faixa.scss";

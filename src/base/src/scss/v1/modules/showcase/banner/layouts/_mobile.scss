@@ -1,0 +1,42 @@
+& {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+
+  /* basic layout blocks */
+  .beon-showcase__head,
+  .beon-showcase__items-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* slider styles */
+  .beon-showcase__items-wrapper {
+    .beon-slider__frame {
+      width: 100%;
+      min-width: unset;
+      max-width: unset;
+      padding: 0;
+      margin: 0;
+    }
+
+    .beon-slider__slide {
+      padding: 0;
+    }
+  }
+
+  /* layout */
+  & {
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
+
+    .beon-showcase__head {
+      background-color: rgba(0, 0, 0, 0.35);
+      padding-bottom: 15px;
+    }
+  }
+}

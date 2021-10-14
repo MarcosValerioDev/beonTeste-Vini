@@ -1,0 +1,33 @@
+.beon-notificacao {
+  /* top one */
+  &.beon-notificacao--0deg {
+    transform-origin: top center;
+  }
+
+  /* bottom one */
+  &.beon-notificacao--180deg {
+    transform-origin: bottom center;
+  }
+
+  /* right ones */
+  &.beon-notificacao--45deg,
+  &.beon-notificacao--90deg,
+  &.beon-notificacao--135deg {
+    transform-origin: center right;
+  }
+
+  /* left ones */
+  &.beon-notificacao--225deg,
+  &.beon-notificacao--270deg,
+  &.beon-notificacao--315deg {
+    transform-origin: center left;
+  }
+
+  /* scales */
+  &.beon-notificacao--s50 {
+    transform: scale(0.5);
+  }
+  &.beon-notificacao--s75 {
+    transform: scale(0.75);
+  }
+}

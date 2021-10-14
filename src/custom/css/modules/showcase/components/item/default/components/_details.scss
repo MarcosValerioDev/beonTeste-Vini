@@ -1,0 +1,13 @@
+.beon-showcase__item-details {
+  & {
+    /* display: block; */
+    color: $def-c-strong;
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: underline;
+    list-style: none;
+    margin: 0;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+}

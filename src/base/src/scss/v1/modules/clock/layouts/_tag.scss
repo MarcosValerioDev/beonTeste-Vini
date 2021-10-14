@@ -1,0 +1,16 @@
+@import "../components/fragments/_digital.scss";
+@import "../components/fragments/_inline.scss";
+
+.beon-clock--tag {
+  &.beon-clock--digital {
+    &.beon-clock--compact {
+      /*  */
+    }
+  }
+
+  &.beon-clock--inline {
+    &.beon-clock--compact {
+      /*  */
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.beon-notificacao {
+  &.beon-notificacao--padrao {
+    animation-name: pop-from-bottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+}
+
+.beon-notificacao {
+  &.beon-notificacao--horizontal {
+    animation-timing-function: ease-out;
+
+    /* top one */
+    &.beon-notificacao--0deg {
+      animation-name: slide-from-top;
+      animation-duration: 0.8s;
+    }
+
+    /* bottom one */
+    &.beon-notificacao--180deg {
+      animation-name: slide-from-bottom;
+      animation-duration: 0.8s;
+    }
+
+    /* right ones */
+    &.beon-notificacao--45deg,
+    &.beon-notificacao--90deg,
+    &.beon-notificacao--135deg {
+      animation-name: slide-from-right;
+      animation-duration: 1s;
+    }
+
+    /* left ones */
+    &.beon-notificacao--225deg,
+    &.beon-notificacao--270deg,
+    &.beon-notificacao--315deg {
+      animation-name: slide-from-left;
+      animation-duration: 1s;
+    }
+  }
+}
+
+@keyframes slide-from-top {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+
+  to {
+    top: $notificacao-position-offset;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    right: -$notificacao-horizontal-width;
+    opacity: 0;
+  }
+
+  to {
+    right: $notificacao-position-offset;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-bottom {
+  from {
+    bottom: -200px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: $notificacao-position-offset;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    left: -$notificacao-horizontal-width;
+    opacity: 0;
+  }
+
+  to {
+    left: $notificacao-position-offset;
+    opacity: 1;
+  }
+}
+
+@keyframes pop-from-bottom {
+  from {
+    margin-top: 60px;
+    opacity: 0;
+  }
+
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}

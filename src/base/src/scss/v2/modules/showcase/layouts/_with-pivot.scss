@@ -1,0 +1,213 @@
+$showcase-with-intro-intro-width: 250px;
+$showcase-with-intro-intro-padding: 0 10px 0 0;
+$showcase-with-intro-arrow-square: 60px;
+
+.beon-showcase.beon-showcase--with-pivot {
+  padding-left: $showcase-with-intro-arrow-square;
+  padding-right: $showcase-with-intro-arrow-square;
+
+  .beon-showcase__head {
+    position: absolute;
+    width: $showcase-with-intro-intro-width;
+    height: 100%;
+    padding: $showcase-with-intro-intro-padding;
+    box-sizing: border-box;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .beon-showcase__head-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    background-color: gray;
+  }
+
+  .beon-showcase__title,
+  .beon-showcase__subtitle,
+  .beon-showcase__viewmore {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+  }
+
+  .beon-showcase__title {
+    margin-bottom: 0.5em;
+  }
+
+  .beon-showcase__subtitle {
+    margin-bottom: 1.5em;
+  }
+
+  .beon-showcase__viewmore {
+    width: 100%;
+    color: inherit;
+    font-size: 1em;
+    text-transform: uppercase;
+
+    > a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &.beon-anchor--with-longarrow {
+      > a:after {
+        content: "--->";
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .beon-slider__frame {
+    width: auto;
+    margin-left: $showcase-with-intro-intro-width;
+    margin-right: 0;
+  }
+
+  /* move navigation to outside tns frame,
+  allowing intro and items to be aligned.
+  adds an extra bottom margin to component to avoid overlaping. */
+  .beon-slider__frame {
+    .beon-slider__slide {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .tns-nav {
+      position: absolute;
+      left: 0;
+      height: 42px;
+    }
+
+    .tns-controls {
+      [data-controls] {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      [data-controls="prev"] {
+        margin-left: -$showcase-with-intro-intro-width;
+        left: -60px;
+      }
+
+      [data-controls="next"] {
+        right: -60px;
+      }
+    }
+  }
+
+  & {
+    margin-bottom: 42px;
+  }
+
+  /* position left arrow before intro block */
+  .beon-slider__frame {
+    .tns-controls {
+      [data-controls="prev"] {
+        margin-left: -$showcase-with-intro-intro-width;
+      }
+    }
+  }
+}
+
+/* smartphones landscape */
+@media screen and (max-width: 425px) {
+  .beon-showcase.beon-showcase--with-intro {
+    & {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 70px;
+    }
+
+    .beon-showcase__head {
+      width: 50%;
+    }
+
+    .beon-slider__frame {
+      width: 50%;
+      margin-left: 50%;
+
+      /* adjust showcase item margins */
+      .beon-slider__slide,
+      .beon-showcase__item {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        min-height: 220px;
+      }
+
+      /* position arrows aligned with navigation control */
+      .tns-controls,
+      .tns-nav {
+        bottom: -48px;
+        height: 42px;
+        margin-left: -100%;
+      }
+
+      .tns-controls {
+        [data-controls="prev"] {
+          margin-left: 0;
+        }
+
+        [data-controls] {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          transform: none;
+        }
+      }
+
+      .tns-nav {
+        /* set width to 200% to double frame width set to 50% */
+        width: 200%;
+        padding-left: 90px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+/* small smartphones */
+@media screen and (max-width: 375px) {
+  .beon-showcase.beon-showcase--with-intro {
+    .beon-showcase__head {
+      position: relative;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    .beon-slider__frame {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 10px;
+
+      .beon-slider__slide {
+        padding: 0 !important;
+      }
+
+      /* position arrows aligned with navigation control */
+      .tns-controls,
+      .tns-nav {
+        bottom: -50px;
+        height: 42px;
+        margin-left: 0;
+      }
+
+      .tns-nav {
+        width: 100%;
+      }
+    }
+  }
+}

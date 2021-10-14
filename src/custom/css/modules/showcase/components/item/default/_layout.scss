@@ -1,0 +1,74 @@
+%beon__item--default {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-width: $showcase-item-min-width;
+  max-width: $showcase-item-max-width;
+
+  margin-bottom: 0;
+  margin-top: 0;
+
+  /* flex definitions */
+  .beon-showcase__item-badges {
+    order: 1;
+  }
+  .beon-showcase__item-image {
+    order: 10;
+  }
+  .beon-showcase__item-title {
+    order: 35;
+  }
+  .beon-showcase__item-references {
+    order: 40;
+  }
+  .beon-showcase__review {
+    order: 55;
+  }
+  .beon-showcase__item-description {
+    order: 50;
+  }
+  .beon-showcase__item-actions {
+    order: 60;
+  }
+
+  /* components */
+  @import './components/_title.scss';
+  @import './components/_image.scss';
+  @import './components/_description.scss';
+  @import './components/_pricebox.scss';
+  @import './components/_actions.scss';
+  @import './components/_badges.scss';
+  @import './components/_tags.scss';
+  @import './components/_references.scss';
+  @import './components/_rating.scss';
+  @import './components/_details.scss';
+
+  /* custom */
+  & {
+    padding: 0;
+    margin: 10px 5px;
+    overflow: visible;
+    transition: none;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 384px;
+    background-color: #fff;
+    width: auto;
+
+    @include for-tablet-portrait-up {
+      margin: 0 10px;
+    }
+
+    .beon-showcase__item-tags,
+    .beon-showcase__item-details,
+    .beon-showcase__item-references {
+      display: none !important;
+    }
+
+    /* hover */
+    &:hover {
+      box-shadow: 0 6px 6px #00000015;
+    }
+  }
+}

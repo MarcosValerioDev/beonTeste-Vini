@@ -1,0 +1,47 @@
+.beon-showcase__item-title {
+  & {
+    grid-area: title;
+    display: block;
+    width: 100%;
+    margin: 10px auto 0 auto;
+    padding: 0 10px;
+    color: $def-c-strong;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+    min-height: 63px;
+    max-height: 63px;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: hidden;
+
+    @include for-tablet-portrait-up {
+      font-size: 15px;
+      line-height: 21px;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+        //display: -webkit-box;
+        //-webkit-line-clamp: 2; /* number of lines to show */
+        //-webkit-box-orient: vertical;
+
+          &:hover {
+            color: #f78934;
+          }
+
+          @include for-tablet-portrait-up {
+            padding: 0;
+          }
+      }
+  }
+}

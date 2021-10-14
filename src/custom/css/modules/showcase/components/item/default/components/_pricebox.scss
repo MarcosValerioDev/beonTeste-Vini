@@ -1,0 +1,222 @@
+.beon-showcase__item-price-box {
+  & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+    min-height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 14px;
+    padding: 0 10px;
+    @include for-tablet-portrait-up {
+      padding: 0;
+    }
+
+    /* background-color: red; */
+    .beon-showcase__item-price--from {
+      order: 10;
+    }
+    .beon-showcase__item-avista {
+      order: 40;
+    }
+
+    &.beon-showcase__item-price-box--simple .beon-showcase__item-price,
+    .beon-showcase__item-price--to {
+      order: 20;
+    }
+
+    .beon-showcase__item-installments {
+      order: 30;
+    }
+  }
+  &.beon-showcase__item-price-box--special {
+    .beon-showcase__item-price--to {
+      .currency {
+        &:before {
+          content: 'Por:';
+          font-size: 16px;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  /* preços */
+  /* preço global */
+  &.beon-showcase__item-price-box--simple,
+  &.beon-showcase__item-price-box--special {
+    align-items: flex-start;
+    text-align: left;
+    font-size: 11px;
+    font-family: $def-ff;
+
+    @include for-tablet-portrait-up {
+      padding: 0;
+      font-size: 20px;
+      letter-spacing: normal;
+    }
+
+    .beon-showcase__item-price {
+      & {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        line-height: 1em;
+        color: $def-c-text;
+      }
+
+      .beon-showcase__price {
+        margin-bottom: 0 !important;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit !important;
+        text-align: left;
+        line-height: 20px;
+      }
+
+      /* prefix all prices */
+      .prefix {
+        display: none;
+      }
+    }
+  }
+
+  /* preco de */
+  .beon-showcase__item-price--from {
+    grid-area: price_from;
+    position: relative;
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #999 !important;
+    font-weight: 300 !important;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0px;
+    &:before {
+      content: 'De:';
+    }
+
+    &:after {
+      content: '';
+      width: 50px;
+      height: 2px;
+      background-color: $def-c-stimulus;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: 2px;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    .beon-showcase__price {
+      font-size: inherit;
+      line-height: 1em;
+      color: inherit !important;
+    }
+
+    .prefix {
+      display: none !important;
+    }
+  }
+
+  /* preço por */
+  &.beon-showcase__item-price-box--simple .beon-showcase__item-price,
+  .beon-showcase__item-price--to {
+    & {
+      font-size: 16px;
+      line-height: 20px;
+      font-family: 'Open Sans', sans-serif;
+
+      @include for-tablet-portrait-up {
+        font-size: 16px;
+      }
+      @include for-tablet-landscape-up {
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: normal;
+      }
+
+      &:before {
+        content: 'a partir de: ';
+        text-transform: uppercase;
+        margin-right: 5px;
+        display: none;
+      }
+    }
+
+    &,
+    .beon-showcase__price {
+      font-weight: 300 !important;
+      color: #444 !important;
+    }
+  }
+
+  /* parcelamento */
+  .beon-showcase__item-installments {
+    grid-area: installments;
+
+    display: block;
+    color: $def-c-subtle;
+    font-size: 10px;
+    font-weight: normal;
+    text-align: left;
+    line-height: auto;
+    height: auto;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: normal;
+
+    strong.beon-interaction__installmentsCount {
+      &:before {
+        content: 'em até';
+      }
+    }
+    strong.beon-interaction__installmentPrice {
+      &:after {
+        content: 'sem juros';
+      }
+    }
+
+    strong {
+      font-weight: 400;
+      font-size: 10px;
+    }
+
+    .null:first-of-type {
+      display: none;
+    }
+  }
+
+  /* à vista */
+  .beon-showcase__item-avista {
+    & {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+
+      .beon-showcase__item-price {
+        font-weight: 700 !important;
+        font-size: 16px;
+        text-align: left;
+        color: #f78934 !important;
+        margin-top: 2px;
+        order: 1;
+      }
+
+      &:after {
+        content: '(à vista no boleto)';
+        display: block;
+        font-size: 9px;
+        text-align: left;
+        margin-left: 3px;
+        line-height: 9px;
+        font-weight: 900;
+        color: #f78934 !important;
+        order: 2;
+      }
+    }
+  }
+}

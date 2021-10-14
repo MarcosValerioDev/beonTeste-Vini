@@ -1,0 +1,59 @@
+.beon-notificacao--0deg,
+.beon-notificacao--45deg,
+.beon-notificacao--90deg,
+.beon-notificacao--135deg,
+.beon-notificacao--180deg,
+.beon-notificacao--225deg,
+.beon-notificacao--270deg,
+.beon-notificacao--315deg {
+  position: fixed;
+  z-index: 9999;
+  top: unset;
+  right: unset;
+  left: unset;
+  bottom: unset;
+}
+
+.beon-notificacao--0deg {
+  top: $notificacao-position-offset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.beon-notificacao--45deg {
+  top: $notificacao-position-offset;
+  right: $notificacao-position-offset;
+}
+
+.beon-notificacao--90deg {
+  top: 50%;
+  transform: translateY(-50%);
+  right: $notificacao-position-offset;
+}
+
+.beon-notificacao--135deg {
+  bottom: $notificacao-position-offset;
+  right: $notificacao-position-offset;
+}
+
+.beon-notificacao--180deg {
+  bottom: $notificacao-position-offset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.beon-notificacao--225deg {
+  bottom: $notificacao-position-offset;
+  left: $notificacao-position-offset;
+}
+
+.beon-notificacao--270deg {
+  top: 50%;
+  transform: translateY(-50%);
+  left: $notificacao-position-offset;
+}
+
+.beon-notificacao--315deg {
+  top: $notificacao-position-offset;
+  left: $notificacao-position-offset;
+}

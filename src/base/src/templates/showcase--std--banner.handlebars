@@ -1,0 +1,210 @@
+<div class='beon-interaction beon-showcase
+    beon-showcase--banner
+    beon-showcase--{{element.template.params.layout}}
+     beon-showcase--{{element.template.params.width}}
+     beon-showcase--with-cta
+     {{element.template.params.container_class}}' id='{{element._id}}' style='
+        {{#ifcond element.template.params.width "eq" "container"}}
+            {{#if element.template.params.maxwidth}}
+                max-width: {{element.template.params.maxwidth}};
+            {{/if}}
+        {{/ifcond}}
+        {{element.template.params.container_style}}'
+    data-event-root='[null, \"{{element.template.params.event_label}}\", null]'>
+    <div class='beon-showcase__head' style="{{element.template.params.cta_style}}">
+        <div class='beon-showcase__head-inner'>
+            <span class="beon-showcase__headline">
+                <span>{{{element.template.params.headline}}}</span>
+            </span>
+
+            {{#if element.template.params.lead}}
+            <span class="beon-showcase__lead">
+                <span>{{{element.template.params.lead}}}</span>
+            </span>
+            {{/if}}
+
+            {{#if element.template.params.cta_link}}
+            <span class="beon-showcase__cta">
+                <a href="{{{element.template.params.cta_link}}}" data-track='click'
+                    data-event='[\"CTA\", null, null]'><span>{{{element.template.params.cta_label}}}</span></a>
+            </span>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="beon-showcase__items-wrapper beon-slider" data-config='{{element.template.params.container_config}}'>
+        <div class="beon-slider__frame">
+            <div class="beon-slider__slides">
+                {{#each element.recommendation_products}}
+                <div class='beon-slider__slide'>
+                    <div class='beon-showcase__item beon-interaction__item' data-product-id='{{product_id}}'
+                        data-product-sku='{{sku}}'>
+                        <div class='beon-showcase__item-title'>
+                            <a href='{{url}}' title='{{name}}' data-action='details' data-track='click'
+                                data-event='[\"Detalhes\", null, null]'>
+                                <span>{{name}}</span>
+                            </a>
+                        </div>
+
+                        {{#if details}}
+                        <ul class='beon-showcase__item-details'>
+                            {{#each details}}
+                            <li class='detail-{{@key}}'>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+
+                        <div class="beon-showcase__item-references">
+                            <span class="beon-product__sku">{{sku}}</span>
+                            <span class="beon-product__id">{{product_id}}</span>
+                        </div>
+
+                        <div class="beon-showcase__item-tags">
+                            {{#each trees}}
+                            {{#ifcond this.kind "eq" "tag"}}
+                            <span class="beon-tag beon-tag--{{../this.tree_id}}">
+                                {{../this.name}}
+                            </span>
+                            {{/ifcond}}
+                            {{/each}}
+                        </div>
+
+                        <div class='beon-showcase__review'>
+                            <div class='bn--widget bn--yourviews yv-review-quickreview' value='{{sku}}'
+                                style='display:none'>
+                            </div>
+                            <div class='bn--widget bn--trustvox' data-trustvox-product-code='{{product_id}}'
+                                style='display:none'>
+                            </div>
+                        </div>
+
+                        <div class='beon-showcase__item-image'>
+                            <a href='{{url}}' title='{{name}}' data-action='details' data-track='click'
+                                data-event='[\"Detalhes\", null, null]'>
+                                <img class='bn-lazy' data-src='{{images.[0]}}' alt='{{name}}'>
+                            </a>
+                        </div>
+
+                        <div class='beon-showcase__item-description'>
+                            {{#if price_discount_off}}
+                            <div class='beon-showcase__item-price-box beon-showcase__item-price-box--special'>
+                                <span class='beon-showcase__item-price beon-showcase__item-price--from'>
+                                    <span class='prefix'>De: </span> <span
+                                        class='beon-showcase__price'>{{currency price_from}}</span>
+                                </span>
+                                <span class='beon-showcase__item-price beon-showcase__item-price--to'>
+                                    <span class='prefix'> por: </span> <span
+                                        class='beon-showcase__price'>{{currency price_to}}</span>
+                                </span>
+
+                                <span class='beon-showcase__item-installments'>
+                                    {{#ifcond installment_months 'gt' 1}}
+                                    <span class="null"> ou </span>
+                                    <strong class="beon-interaction__installmentsCount">
+                                        {{../installment_months}}x
+                                    </strong>
+                                    <span class="null"> de </span>
+                                    <strong class="beon-interaction__installmentPrice">
+                                        {{currency ../installment_amount}}
+                                    </strong>
+                                    {{/ifcond}}
+                                </span>
+
+                                {{#if additional_prices.avista}}
+                                <span class='beon-showcase__item-avista'>
+                                    <strong class='beon-showcase__item-price'>
+                                        {{currency additional_prices.avista}}
+                                    </strong>
+                                </span>
+                                {{/if}}
+                            </div>
+                            {{else}}
+                            <div class='beon-showcase__item-price-box beon-showcase__item-price-box--simple'>
+                                <span class='beon-showcase__item-price'>
+                                    <span class='beon-showcase__price'>{{currency price_to}}</span>
+                                </span>
+
+                                <span class='beon-showcase__item-installments'>
+                                    {{#ifcond installment_months 'gt' 0}}
+                                    <span class="null"> ou </span>
+                                    <strong class="beon-interaction__installmentsCount">
+                                        {{../installment_months}}x
+                                    </strong>
+                                    <span class="null"> de </span>
+                                    <strong class="beon-interaction__installmentPrice">
+                                        {{currency ../installment_amount}}
+                                    </strong>
+                                    {{/ifcond}}
+                                </span>
+
+                                {{#if additional_prices.avista}}
+                                <span class='beon-showcase__item-avista'>
+                                    <strong class='beon-showcase__item-price'>
+                                        {{currency additional_prices.avista}}
+                                    </strong>
+                                </span>
+                                {{/if}}
+                            </div>
+                            {{/if}}
+                        </div>
+
+                        <div class='beon-showcase__item-badges'>
+                            {{#if price_discount_off}}
+                            <span class='beon-showcase__item-badge beon-showcase__item-badge--off'>
+                                <span class='beon-showcase__item-discount'>{{price_discount_off}}%</span>
+                                <span class="null">off</span>
+                            </span>
+                            {{/if}}
+
+                            {{#if price_discount_value}}
+                            <span
+                                class='beon-showcase__item-badge beon-showcase__item-badge--off beon-showcase__item-badge--off-value'>
+                                <span class='beon-showcase__item-discount'>{{currency price_discount_value}}</span>
+                            </span>
+                            {{/if}}
+
+                            {{#ifcond is_available 'eq' false}}
+                            <span class='beon-showcase__item-badge beon-showcase__item-badge--outofstock'>
+                                <span>Indisponível</span>
+                            </span>
+                            {{/ifcond}}
+
+                            {{#ifcond ../element.template.params.free_shipping_price 'gte' 0}}
+                            {{#ifcond ../price_to 'gte' ../../element.template.params.free_shipping_price}}
+                            <span class='beon-showcase__item-badge beon-showcase__item-badge--shipping'>
+                                <span>Frete grátis</span>
+                            </span>
+                            {{/ifcond}}
+                            {{/ifcond}}
+
+                            {{#if is_new}}
+                            <span class='beon-showcase__item-badge beon-showcase__item-badge-new'>
+                                <span>Lançamento</span>
+                            </span>
+                            {{/if}}
+                        </div>
+
+                        <div class='beon-showcase__item-actions'>
+                            {{#ifcond ../element.template.params.cta_buy_show 'eq' 'sim'}}
+                            <a href='{{../url}}'
+                                class='beon-button beon-button--{{../../element.template.params.cta_buy_style}}'
+                                data-action='buy' data-track='click' data-event='[\"Comprar\", null, null]'> <span
+                                    class='beon-button__label beon-button__label--buy'>{{../../element.template.params.cta_buy_label}}</span>
+                            </a>
+                            {{/ifcond}}
+
+                            {{#ifcond ../element.template.params.cta_details_show 'eq' 'sim'}}
+                            <a href='{{../url}}'
+                                class='beon-button beon-button--{{../../element.template.params.cta_details_style}}'
+                                data-action='details' data-track='click' data-event='[\"Detalhes\", null, null]'> <span
+                                    class='beon-button__label beon-button__label--details'>{{../../element.template.params.cta_details_label}}</span>
+                            </a>
+                            {{/ifcond}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.beon-showcase__item-references {
+  display: none;
+  padding-left: 6.5px;
+  padding-right: 6.5px;
+
+  .beon-product__sku {
+    display: none;
+
+    @include for-desktop-up {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: $def-c-subtle;
+
+      &:before {
+        content: "Cod.";
+      }
+    }
+  }
+
+  .beon-product__id {
+    display: none;
+  }
+}

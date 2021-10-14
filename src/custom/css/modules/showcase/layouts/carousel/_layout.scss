@@ -1,0 +1,63 @@
+.beon-showcase--carousel {
+  & {
+    width: 100%;
+    max-width: unset;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 20px auto;
+
+    font-family: $showcase-ff;
+    font-size: $showcase-fz;
+    line-height: $showcase-lh;
+
+    .beon-slider__frame {
+      width: 100%;
+      max-width: unset;
+      min-width: unset;
+    }
+
+    @import "../../components/header/_default.scss";
+    @import "../../components/slider/_controls.scss";
+
+    @include for-tablet-portrait-up {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: $showcase-container-max-width;
+      min-width: $showcase-container-min-width;
+
+      .beon-slider__frame {
+        width: 100%;
+        max-width: unset;
+        min-width: unset;
+      }
+    }
+  }
+  &.beon-showcase--compact .beon-showcase__item:hover .beon-showcase__item-image{
+    box-shadow: none !important;
+  }
+  &.beon-showcase--compact .beon-showcase__item:hover .beon-showcase__item-actions {  
+    background: none;
+  }
+
+  &.beon-showcase--default {
+    @import "../../components/item/_default.scss";
+  }
+
+  &.beon-showcase--compact {
+    @import "../../components/item/_lateral.scss";
+
+    .beon-slider__slides .beon-slider__slide {
+      padding: 0 7px !important;
+      @include for-tablet-portrait-up {
+        padding: 0  !important;
+      }
+    }
+
+    .tns-controls {
+      button[data-controls] {
+        top: 50% !important;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

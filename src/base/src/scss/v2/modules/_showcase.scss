@@ -1,0 +1,237 @@
+<<<<<<< HEAD
+@import "./showcase/_vars.scss";
+@import "./showcase/layouts/carousel/_default.scss";
+=======
+.beon-showcase {
+  display: block;
+  width: 100%;
+  max-width: $showcase-container-max-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  font-family: $showcase-ff;
+  font-size: $showcase-fz;
+  line-height: $showcase-lh;
+
+  .beon-showcase__head,
+  .beon-showcase__items-wrapper {
+    clear: both;
+  }
+
+  .beon-showcase__head {
+    position: relative;
+    text-align: left;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 50%;
+      border-top: 1px solid #ccc;
+      z-index: 1;
+    }
+
+    .beon-showcase__title,
+    .beon-showcase__viewmore {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 2em;
+      background-color: white;
+      padding: 0 0.5em;
+    }
+  }
+
+  .beon-showcase__head-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: $showcase-title-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .beon-showcase__title {
+    font-size: 2em;
+  }
+
+  .beon-showcase__viewmore {
+    font-size: 1.2em;
+    color: $showcase-c-stimulus;
+    text-decoration: none;
+  }
+
+  /* items */
+  &.beon-showcase--4col .beon-showcase__item {
+    width: 23%;
+  }
+
+  &.beon-showcase--6col .beon-showcase__item {
+    width: 15%;
+  }
+
+  .beon-showcase__items-wrapper {
+    margin-top: 0;
+    text-align: justify;
+    width: 100%;
+    padding: 0;
+    font-size: 0.1px;
+
+    box-sizing: border-box;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  // item element
+  .beon-showcase__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 1em auto;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: $showcase-fz;
+    line-height: $showcase-lh;
+
+    &:hover {
+      box-shadow: inset 0 0 1px #000;
+      border-radius: 5px;
+    }
+
+    a {
+      &,
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+      }
+    }
+  }
+
+  // item image
+  .beon-showcase__item-image {
+    margin-bottom: 10px;
+    text-align: center;
+
+    img {
+      width: auto;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .beon-image--swap {
+      display: none;
+    }
+  }
+
+  // item imagem swap control
+  .beon-showcase__item:hover .beon-image {
+    display: none;
+  }
+
+  .beon-showcase__item:hover .beon-image--swap {
+    display: inline-block;
+  }
+
+  // item title
+  .beon-showcase__item-title {
+    padding: 0 0.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  // item description
+  .beon-showcase__item-description {
+    padding: 0 0.5em;
+  }
+
+  // item price
+  .beon-showcase__item-price--from .beon-showcase__price {
+    font-size: 1em;
+    color: $showcase-c-text;
+  }
+
+  .beon-showcase__item-price-box--simple .beon-showcase__price,
+  .beon-showcase__item-price--to .beon-showcase__price {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $showcase-c-stimulus;
+  }
+
+  .beon-showcase__item-installments {
+    display: block;
+  }
+
+  .beon-interaction__installmentsCount,
+  .beon-interaction__installmentPrice {
+    font-weight: bold;
+  }
+
+  .beon-showcase__item-badge {
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  .beon-showcase__item-badge--off {
+    padding: 0.2em 0.5em 0.2em 2em;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    background-color: red;
+  }
+
+  // actions
+  .beon-showcase__item-actions {
+    margin-top: 2em;
+    box-sizing: border-box;
+  }
+}
+
+@import "./showcase/narrow";
+@import "./showcase/banner";
+@import "./showcase/with-intro";
+
+@media screen and (max-width: 425px) {
+  .beon-showcase {
+    /* position arrows aligned with navigation control */
+    .beon-slider__frame {
+      .tns-controls {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 42px;
+
+        [data-controls="prev"] {
+          margin-left: 0;
+        }
+
+        [data-controls] {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 42px;
+          height: 42px;
+          transform: none;
+        }
+      }
+
+      .tns-nav {
+        height: 42px;
+        padding-left: 90px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+>>>>>>> feature/shopfisio

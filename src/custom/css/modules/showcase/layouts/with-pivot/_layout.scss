@@ -1,0 +1,208 @@
+.beon-showcase.beon-showcase--with-pivot {
+  & {
+    grid-template:
+      'head'
+      'pivot'
+      'sliders' / 100%;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include for-tablet-portrait-up {
+      & {
+        grid-template:
+          'head head head'
+          'pivot . sliders' / 30% auto 62.7%;
+
+        padding-bottom: 42px;
+        margin-bottom: 30px !important;
+      }
+    }
+
+    @include for-tablet-landscape-up {
+      & {
+        grid-template:
+          'head head head'
+          'pivot . sliders' / 24.3% auto 73%;
+      }
+    }
+  }
+  .beon-showcase__item-title {
+    padding: 0 !important;
+  }
+  .beon-showcase__item-price-box {
+    padding: 0 !important;
+    @include for-tablet-portrait-up {
+      padding: 0 10px !important;
+    }
+  }
+  .beon-showcase__item-price {
+    flex-direction: column;
+  }
+
+  .beon-showcase__item:hover .beon-showcase__item-actions {
+    opacity: 1;
+    background: none !important;
+  }
+  .beon-showcase__head {
+    margin-bottom: 0 !important;
+
+    @include for-tablet-landscape-up {
+      margin-bottom: 20px !important;
+    }
+
+    .beon-showcase__head-inner {
+      padding: 0;
+      background-color: transparent;
+
+      @include for-tablet-portrait-up {
+        margin-bottom: 10px;
+      }
+    }
+
+    .beon-showcase__title {
+      max-width: 100%;
+      padding: 0;
+
+      @include for-tablet-portrait-up {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .beon-showcase__wrapper-label {
+    @extend %with-pivot--controls-label;
+    margin-bottom: 1em;
+
+    @include for-tablet-portrait-up {
+      margin-bottom: 0;
+      padding-left: 20px !important;
+    }
+  }
+
+  &.beon-showcase--with-pivot-button {
+    .beon-showcase__pivot-control--button {
+      top: -3px;
+      right: 10px;
+
+      @extend %with-pivot--controls-label;
+
+      box-shadow: none;
+      background-color: transparent;
+
+      &:before {
+        width: 15px;
+        height: 15px;
+        /* ⎌ */
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .beon-showcase__pivot {
+    @include for-tablet-portrait-up {
+      & {
+        margin-top: 15px;
+      }
+    }
+
+    @include for-phone-only {
+      .beon-showcase__item {
+        display: grid;
+        grid-template:
+          'image . title'
+          'image . description' / 120px 10px 1fr;
+        grid-template-rows: 40% 1fr;
+        max-width: unset;
+
+        .beon-showcase__item-title {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          margin: 0;
+          padding: 0;
+          padding-bottom: 0;
+          height: 100%;
+        }
+
+        .beon-showcase__item-actions {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .beon-showcase__sliders-wrapper {
+    padding-left: 0;
+  }
+
+  /* highlight pivot */
+  @include for-tablet-portrait-up {
+    .beon-showcase__pivot-wrapper {
+      padding: 15px;
+      border: 1px solid #d8d8d8;
+      border-radius: 3px;
+
+      .beon-showcase__wrapper-label {
+        padding-left: 0 !important;
+      }
+    }
+
+    .beon-showcase__pivot-control--button {
+      top: 12px !important;
+      right: 0 !important;
+    }
+
+    .beon-showcase__sliders-wrapper {
+      padding-top: 15px;
+    }
+  }
+
+  .beon-slider__frame {
+    width: 100%;
+    padding-top: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+
+    @include for-tablet-portrait-up {
+      & {
+        margin-top: 15px;
+      }
+    }
+
+    .beon-slider__slides .beon-slider__slide {
+      padding-top: 0 !important;
+    }
+
+    .tns-nav {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .tns-controls {
+      display: block;
+      button[data-controls] {
+        transform: translateY(-50%);
+        background-size: 65%;
+
+        &[data-controls='next'] {
+          right: -8px !important;
+        }
+
+        &[data-controls='prev'] {
+          left: -8px !important;
+        }
+      }
+    }
+  }
+}
+
+%with-pivot--controls-label {
+  color: #b35f22;
+  text-transform: uppercase;
+  font-size: 11.5px !important;
+  font-weight: normal;
+}

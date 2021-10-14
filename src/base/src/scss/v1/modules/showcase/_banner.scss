@@ -1,0 +1,8 @@
+.beon-showcase--banner {
+  @import "./banner/layouts/mobile";
+  @import "./banner/layouts/default";
+  @import "./banner/layouts/compact";
+  /* @import "./banner/layouts/hero"; */
+
+  @import "./banner/modifiers/fullwidth";
+}

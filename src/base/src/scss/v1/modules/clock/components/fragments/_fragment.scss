@@ -1,0 +1,35 @@
+%bn-clock__frag {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+  min-width: 1.25em;
+  box-sizing: content-box;
+  line-height: 1em;
+  font-weight: bolder;
+  color: inherit;
+  font-size: inherit;
+
+  &.bn-clock__frag-d {
+    padding-left: 0;
+  }
+
+  &.bn-clock__frag-d,
+  &.bn-clock__frag-H,
+  &.bn-clock__frag-i {
+    $frag-after-width: 0.5em;
+
+    padding-right: $frag-after-width;
+    &:after {
+      content: ":";
+      position: absolute;
+      display: block;
+      right: 0;
+      width: $frag-after-width;
+      text-align: center;
+    }
+  }
+}

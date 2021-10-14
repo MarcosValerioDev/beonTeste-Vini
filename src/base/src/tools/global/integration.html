@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beon - ambiente de testes de integração</title>
+
+  <script async src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.7"></script>
+
+  <script type="text/javascript">
+    window._beonlog = true;
+    window._beonenv = "development";
+
+    (function (i, s, o, g, r, a, m, d) {
+      i["beonobject"] = r;
+      (i[r] =
+        i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = "1";
+      a.src = g;
+      a.id = "beon-" + r;
+      a.setAttribute("data-cookiedomain", d);
+      m.parentNode.insertBefore(a, m);
+    })(
+      window,
+      document,
+      "script",
+      "/assets/base/loader/v4",
+      "beon",
+      null,
+      null,
+      "localhost"
+    );
+
+    beon("create", "bed3f5ca-be5e-44b1-ba47-bab066bcba73", "vtex");
+
+    document.addEventListener("beon.engine.create.after", function (event) {
+      var engine = event.detail.engine;
+      engine.customer_id = "anon_j8x7obqs";
+      engine.session_id = "sess_b2492e3b-38de-4d74-beaf-5a16da657750";
+
+      engine.setCookie("beon-customer-id", engine.customer_id, 0);
+      engine.setCookie("beon-session-id", engine.session_id, 0);
+    });
+  </script>
+
+  <style type="text/css">
+    body {
+      font-family: Montserrat;
+    }
+
+    .beon-region {
+      /* padding: 2em; */
+      margin-bottom: 2em;
+      border: 2px dashed red;
+    }
+
+    .beon-region>.beon-container {
+      /* padding: 1em; */
+      margin-bottom: 1em;
+      border: 1px dashed blue;
+    }
+
+    .controle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 50px;
+      padding: 10px;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .controle button {
+      display: block;
+      height: 100%;
+    }
+  </style>
+
+  <script type="text/javascript" id="beon-post-shelf">
+    document.addEventListener("DOMContentLoaded", initControls);
+
+    function initControls() {
+      console.log("buttons init");
+
+      var buttons = [
+        [
+          "#pageview_homepage",
+          () => beon("interaction", "context", "homepage"),
+        ],
+      ];
+
+      buttons.forEach((button) =>
+        document.querySelector(button[0]).addEventListener("click", button[1])
+      );
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/0e47f3a0ef.js"></script>
+</head>
+
+<body style="font-size: 10px">
+  <div class="controle">
+    <button id="pageview_homepage">Pageview: homepage</button>
+  </div>
+</body>
+
+</html>

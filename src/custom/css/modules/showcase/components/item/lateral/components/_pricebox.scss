@@ -1,0 +1,31 @@
+/* import default */
+@import '../../default/components/_pricebox.scss';
+
+.beon-showcase__item-price-box {
+  align-items: center;
+  justify-content: center;
+
+  min-height: unset;
+  padding-top: 0;
+
+  @include for-tablet-portrait-up {
+    padding: 5px 0;
+  }
+
+  /* à vista */
+  .beon-showcase__item-avista {
+    align-items: baseline;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+
+    &,
+    * {
+      line-height: 20px;
+    }
+  }
+
+  .beon-interaction__installmentsCount:before {
+    display: none;
+  }
+}

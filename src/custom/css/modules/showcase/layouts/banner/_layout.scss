@@ -1,0 +1,211 @@
+.beon-showcase--banner {
+  & {
+    color: $def-c-text;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include for-tablet-portrait-up {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .beon-showcase__item:hover .beon-showcase__item-image {
+    box-shadow: none !important;
+  }
+  .beon-showcase__item:hover .beon-showcase__item-actions {
+    background: none !important;
+  }
+
+  /* global style */
+  &.beon-showcase--fullwidth {
+    max-width: 100%;
+
+    @include for-tablet-portrait-up {
+      max-width: 100%;
+    }
+  }
+
+  &.beon-showcase--default,
+  &.beon-showcase--compact {
+    /* head */
+    .beon-showcase__head {
+      font-size: 15px;
+      background-color: #333;
+      color: #fff;
+
+      .beon-showcase__headline {
+        text-align: center !important;
+      }
+    }
+
+    /* items */
+    .beon-showcase__items-wrapper {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      @include for-tablet-portrait-up {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    @import '../../components/item/_lateral.scss';
+    .beon-showcase__item {
+      max-width: unset;
+    }
+
+    /* controls */
+    @import '../../components/slider/_controls.scss';
+
+    .beon-slider__slides .beon-slider__slide {
+      padding: 0 !important;
+      padding-right: 1px !important;
+    }
+
+    .tns-controls {
+      display: block;
+
+      button[data-controls] {
+        top: 50%;
+        transform: translateY(-50%);
+
+        &[data-controls='prev'] {
+          left: -5px;
+        }
+        &[data-controls='next'] {
+          right: -5px;
+        }
+      }
+    }
+
+    .tns-nav {
+      display: none;
+    }
+
+    @include for-tablet-portrait-up {
+      .tns-controls {
+        display: block;
+      }
+
+      .tns-nav {
+        display: none;
+      }
+
+      .tns-controls button {
+        top: 50% !important;
+
+        &:hover {
+          &[data-controls='prev']:before {
+            padding-right: 0;
+            margin-right: 0;
+          }
+
+          &[data-controls='next']:before {
+            padding-left: 0;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* default layout and adjustments */
+  &.beon-showcase--default {
+    .beon-showcase__head {
+      min-height: 110px;
+    }
+
+    .beon-showcase__item {
+      max-height: 250px;
+      grid-template-rows: 1.5fr 0 max-content 2fr;
+    }
+  }
+
+  /* compact layout and style adjustments */
+  &.beon-showcase--compact {
+    .beon-showcase__item:hover .beon-showcase__item-image {
+      box-shadow: none !important;
+    }
+    .beon-showcase__item:hover .beon-showcase__item-actions {
+      background: none;
+    }
+    .beon-showcase__head {
+      min-height: 80px;
+    }
+
+    .beon-showcase__item {
+      max-height: 150px;
+
+      @include for-tablet-portrait-up {
+        /* grid-template-rows: 1fr 0 55px 45px; */
+
+        .beon-showcase__item-title {
+          span {
+            -webkit-line-clamp: 2;
+            max-height: max-content;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+
+  /* Showcase banner with three columns */
+  /*
+  &.beon-showcase--columns-3 {
+    .beon-showcase__head {
+      width: 100%;
+      @include for-tablet-portrait-up {
+        width: 33%;
+      }
+    }
+    .beon-showcase__head-inner {
+      grid-template:
+        'headline headline'
+        'lead lead'
+        'cta cta' / auto auto !important;
+    }
+    .beon-showcase__items-wrapper {
+      width: 100%;
+      @include for-tablet-portrait-up {
+        width: 66%;
+      }
+    }
+    .beon-showcase__items-wrapper .beon-slider__frame {
+      max-width: 100%;
+      @include for-tablet-portrait-up {
+        max-width: 85%;
+      }
+    }
+    .tns-controls {
+      button[data-controls] {
+        top: 50%;
+        transform: translateY(-50%);
+
+        &[data-controls='prev'] {
+          left: 0px;
+          @include for-tablet-portrait-up {
+            left: -50px;
+          }
+        }
+        &[data-controls='next'] {
+          right: 0px;
+          @include for-tablet-portrait-up {
+            right: -50px;
+          }
+        }
+      }
+    }
+  }*/ 
+  /* Showcase banner with two columns */
+  /*
+  &.beon-showcase--columns-2 {
+  }*/
+}

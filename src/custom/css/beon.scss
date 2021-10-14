@@ -1,0 +1,17 @@
+/* global */
+@import "vars";
+@import "../../base/src/scss/v2/mixins/_breakpoints.scss";
+@import "../../base/src/scss/v1/common";
+
+/* componentes */
+@import "../../base/src/scss/v1/components/slider";
+@import "../../base/src/scss/v1/components/button";
+@import "../../base/src/scss/v1/components/tag_popup";
+
+/* modules */
+/* @import "../../base/src/scss/v1/modules/banner"; */
+/* @import "../../base/src/scss/v1/modules/notification"; */
+/* @import "../../base/src/scss/v1/modules/clock"; */
+/* @import "../../base/src/scss/v1/modules/magicflag"; */
+/* @import "../../base/src/scss/v1/modules/easteregg"; */
+@import "./modules/showcase";

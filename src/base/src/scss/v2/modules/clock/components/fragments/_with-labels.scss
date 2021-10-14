@@ -1,0 +1,76 @@
+$clock-label-height: 20px;
+
+%beon-clock--with-labels-block {
+  .beon-clock__fragment {
+    padding-bottom: $clock-label-height;
+
+    &:before {
+      order: 2;
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: 0;
+      font-size: 0.3em;
+      font-family: sans-serif;
+      line-height: $clock-label-height;
+      text-transform: uppercase;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+}
+
+%beon-clock--with-labels-inline {
+  .beon-clock__fragment {
+    padding-bottom: 0;
+
+    &:before {
+      order: 2;
+      position: relative;
+      display: block;
+      width: fit-content;
+      bottom: unset;
+      font-size: 1em;
+      font-family: inherit;
+      line-height: 1em;
+      text-transform: none;
+      font-weight: normal;
+      text-align: left;
+      padding-left: 0.1em;
+    }
+  }
+}
+
+%beon-clock--with-labels-condensed {
+  .beon-clock__fragment {
+    &.beon-clock__fragment-d:before {
+      content: "dia";
+    }
+    &.beon-clock__fragment-H:before {
+      content: "hora";
+    }
+    &.beon-clock__fragment-i:before {
+      content: "min";
+    }
+    &.beon-clock__fragment-s:before {
+      content: "seg";
+    }
+  }
+}
+
+%beon-clock--with-labels-extended {
+  .beon-clock__fragment {
+    &.beon-clock__fragment-d:before {
+      content: " dias";
+    }
+    &.beon-clock__fragment-H:before {
+      content: " horas";
+    }
+    &.beon-clock__fragment-i:before {
+      content: " minutos";
+    }
+    &.beon-clock__fragment-s:before {
+      content: " segundos";
+    }
+  }
+}

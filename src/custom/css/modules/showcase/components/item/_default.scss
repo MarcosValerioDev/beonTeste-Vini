@@ -1,0 +1,5 @@
+@import "./default/_layout.scss";
+
+.beon-showcase__item {
+  @extend %beon__item--default;
+}

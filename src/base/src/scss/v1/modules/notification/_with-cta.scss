@@ -1,0 +1,75 @@
+.beon-notificacao {
+  .beon-notificacao__cta {
+    display: none;
+    grid-area: cta;
+  }
+
+  &.beon-notificacao--with-cta .beon-notificacao__cta {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    background-color: $notificacao-padrao-cta-bgc;
+    text-decoration: $notificacao-padrao-cta-td;
+    text-transform: $notificacao-padrao-cta-tt;
+    color: $notificacao-padrao-cta-color;
+    font-size: $notificacao-padrao-cta-fz;
+    font-weight: $notificacao-padrao-cta-fw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.beon-notificacao__cta--with-message {
+      font-weight: normal !important;
+      text-transform: unset !important;
+      font-size: 1em !important;
+
+      .beon-notificacao__cta-label {
+        height: auto !important;
+        line-height: 1em;
+        padding-bottom: $notificacao-padrao-padding;
+        color: inherit;
+      }
+
+      .beon-notificacao__cta-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+
+        width: 100%;
+        padding-top: $notificacao-padrao-padding;
+
+        strong {
+          font-weight: bolder;
+          font-size: 1.5em;
+        }
+
+        * {
+          color: inherit;
+        }
+      }
+    }
+
+    .beon-notificacao__cta-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: fit-content;
+      height: $notificacao-padrao-cta-height;
+      padding-left: 10px;
+      padding-right: 10px;
+      box-sizing: border-box;
+    }
+  }
+
+  &.beon-notificacao--horizontal .beon-notificacao__cta {
+    width: auto;
+    max-width: $notificacao-horizontal-cta-max-width;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}

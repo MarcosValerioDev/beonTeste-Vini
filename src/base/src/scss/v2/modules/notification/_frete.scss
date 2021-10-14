@@ -1,0 +1,21 @@
+.beon-notificacao__frete {
+  .beon-notificacao__headline > span {
+    font-size: 1.2em;
+  }
+
+  .beon-notificacao__body > span {
+    font-size: 1.2em;
+    line-height: 1.2em;
+  }
+
+  &.beon-notificacao--horizontal {
+    .beon-notificacao__cta--with-message {
+      .beon-notificacao__cta-label {
+        height: auto !important;
+        line-height: 1em;
+        padding-top: $notificacao-padrao-padding / 2;
+        padding-bottom: $notificacao-padrao-padding;
+      }
+    }
+  }
+}

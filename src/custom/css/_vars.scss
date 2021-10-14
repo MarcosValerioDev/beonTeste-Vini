@@ -1,0 +1,39 @@
+@import '../../base/src/scss/v1/vars';
+@import '../../base/src/scss/v2/vars/_breakpoints.scss';
+
+/* default */
+$def-ff: 'Nunito Sans', sans-serif;
+$def-ff-bold: $def-ff;
+$def-fz: 14px;
+
+$def-c-stimulus: #6bba5a;
+$def-c-text: #f78934;
+$def-c-strong: #777;
+$def-c-subtle: #777;
+
+$def-c-btn-pri-bg: $def-c-stimulus;
+$def-c-btn-pri-fg: #fff;
+$def-c-btn-pri-bg-hover: red;
+$def-c-btn-pri-fg-hover: #fff;
+
+$def-c-btn-trans-bg: #fff;
+$def-c-btn-trans-fg: $def-c-stimulus;
+$def-c-btn-trans-bg-hover: $def-c-stimulus;
+$def-c-btn-trans-fg-hover: #fff;
+
+/* Slider */
+$showcase-ff: $def-ff;
+$showcase-fz: $def-fz;
+$showcase-slider-padding-left: 0;
+$showcase-slider-padding-right: 0;
+$showcase-container-max-width: 1200px;
+$showcase-container-min-width: unset;
+$showcase-title-max-width: 100%;
+$showcase-slider-min-width: auto;
+$showcase-slider-max-width: auto;
+$showcase-item-min-width: unset;
+$showcase-item-max-width: unseet;
+
+/* Notificação */
+$notificacao-padrao-cta-bgc: $def-c-btn-pri-bg;
+$notificacao-padrao-cta-color: $def-c-btn-pri-fg;

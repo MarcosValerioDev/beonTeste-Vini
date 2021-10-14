@@ -1,0 +1,8 @@
+$showcase-carousel--default-container-w: 1200px;
+$showcase-carousel--default-inner-w: 1140px;
+$showcase-carousel--default-container-p: (
+    $showcase-carousel--default-container-w -
+      $showcase-carousel--default-inner-w
+  )/2;
+$showcase-carousel--default-container-pl: $showcase-carousel--default-container-p;
+$showcase-carousel--default-container-pr: $showcase-carousel--default-container-p;

@@ -1,0 +1,87 @@
+.beon-notificacao--0deg,
+.beon-notificacao--45deg,
+.beon-notificacao--90deg,
+.beon-notificacao--135deg,
+.beon-notificacao--180deg,
+.beon-notificacao--225deg,
+.beon-notificacao--270deg,
+.beon-notificacao--315deg {
+  position: fixed;
+  z-index: 9999;
+  top: unset;
+  right: unset;
+  left: unset;
+  bottom: unset;
+}
+
+/* on mobile devices, from half-top ones */
+.beon-notificacao--0deg,
+.beon-notificacao--45deg,
+.beon-notificacao--315deg {
+  left: 0;
+  top: $notificacao-position-offset;
+}
+
+/* on mobile devices, from half-bottom ones */
+.beon-notificacao--90deg,
+.beon-notificacao--270deg,
+.beon-notificacao--135deg,
+.beon-notificacao--180deg,
+.beon-notificacao--225deg {
+  left: 0;
+  bottom: $notificacao-position-offset;
+}
+
+@include for-tablet-landscape-up {
+  .beon-notificacao--0deg {
+    top: $notificacao-position-offset;
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+  }
+
+  .beon-notificacao--45deg {
+    top: $notificacao-position-offset;
+    right: $notificacao-position-offset;
+    left: unset;
+  }
+
+  .beon-notificacao--90deg {
+    top: 50%;
+    transform: translateY(-50%);
+    right: $notificacao-position-offset;
+    left: unset;
+  }
+
+  .beon-notificacao--135deg {
+    bottom: $notificacao-position-offset;
+    right: $notificacao-position-offset;
+    left: unset;
+  }
+
+  .beon-notificacao--180deg {
+    bottom: $notificacao-position-offset;
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+  }
+
+  .beon-notificacao--225deg {
+    bottom: $notificacao-position-offset;
+    left: $notificacao-position-offset;
+    right: unset;
+  }
+
+  .beon-notificacao--270deg {
+    top: 50%;
+    transform: translateY(-50%);
+    left: $notificacao-position-offset;
+    right: unset;
+  }
+
+  .beon-notificacao--315deg {
+    top: $notificacao-position-offset;
+    left: $notificacao-position-offset;
+    right: unset;
+  }
+}

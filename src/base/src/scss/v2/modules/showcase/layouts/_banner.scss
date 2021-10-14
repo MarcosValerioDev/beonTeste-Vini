@@ -1,0 +1,203 @@
+.beon-banner {
+    display: block;
+    width: 100%;
+    max-width: $banner-outer-max-width;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    &,
+    & .beon-showcase__item {
+        font-family: $banner-ff;
+    }
+
+    .beon-showcase__container {
+        display: flex;
+        flex-direction: column;
+        max-width: $banner-inner-max-width;
+        margin: 0 auto;
+    }
+
+    // basic layout
+    .beon-showcase__head,
+    .beon-showcase__slider {
+        display: block;
+        width: 100%;
+    }
+
+    // head
+    .beon-showcase__head {
+        margin-bottom: 0.5em;
+        padding: 1.2em 0;
+        line-height: 1.1em;
+        font-size: 1.5em;
+        text-align: right;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    // item
+    .beon-showcase__item {
+        // title
+        .beon-showcase__item-title {
+            font-size: 1em;
+            line-height: 1.2em;
+            white-space: normal;
+
+            a {
+                color: $def-c-text;
+                text-decoration: none;
+            }
+        }
+
+        // prices
+        .beon-showcase__item-price-box,
+        .beon-showcase__item-installments {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        .beon-showcase__item-price-box {
+            padding-top: 0.5em;
+            line-height: 1.5em;
+
+            .prefix {
+                text-transform: lowercase;
+            }
+
+            // highlight prices
+            &.beon-showcase__item-price-box--simple .beon-showcase__price,
+            &.beon-showcase__item-price-box--special
+                .beon-showcase__item-price--to {
+                font-size: 1em;
+                color: $banner-c-stimulus;
+                font-weight: bold;
+            }
+
+            // off price
+            &.beon-showcase__item-price-box--special
+                .beon-showcase__item-price--from {
+                font-size: 0.8em;
+                color: $def-c-subtle;
+                text-decoration: line-through;
+            }
+
+            &.beon-showcase__item-price-box--special
+                .beon-showcase__item-price--to,
+            &.beon-showcase__item-price-box--special
+                .beon-showcase__item-price--from {
+                display: block;
+            }
+        }
+
+        .beon-showcase__item-installments {
+            padding-left: 0.3em;
+            font-size: 0.7em;
+            color: $def-c-subtle;
+
+            strong {
+                font-weight: normal;
+            }
+        }
+
+        .beon-showcase__item-badge {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            z-index: 10;
+        }
+
+        .beon-showcase__item-badge--off {
+            padding: 0.2em 0.5em 0.2em 2em;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: white;
+            background-color: red;
+
+            .full {
+                display: none;
+            }
+            .number:after {
+                content: "% off";
+            }
+        }
+
+        // actions
+        .beon-showcase__item-actions {
+            margin-top: 0;
+
+            [data-action="details"] {
+                display: none;
+            }
+
+            [data-action="buy"] {
+                visibility: visible;
+                max-width: 250px;
+            }
+        }
+
+        // images
+        .beon-showcase__item-image {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                max-width: 350px;
+                height: auto;
+            }
+
+            .beon-image {
+                position: relative;
+                z-index: 8;
+            }
+
+            .beon-image--swap {
+                position: absolute;
+                z-index: 9;
+                left: 0;
+                top: 0;
+                visibility: hidden;
+            }
+
+            &:hover .beon-image--swap {
+                visibility: visible;
+            }
+        }
+    }
+
+    // slider
+    .beon-slider {
+        padding: 0;
+
+        .beon-slider__frame {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .beon-slider__slide {
+            padding: 0 36px !important;
+            box-sizing: border-box;
+        }
+
+        .beon-slider__prev,
+        .beon-slider__next {
+            display: none;
+
+            & {
+                transform: translateY(-50%);
+            }
+
+            & .fa {
+                display: none;
+            }
+        }
+    }
+}
+
+// big
+@media screen and (min-width: 1144px) {
+}
+
+// common
+@media screen and (max-width: 1143px) {
+}

@@ -1,0 +1,30 @@
+@mixin for-all {
+  @media (min-width: 0) {
+    @content;
+  }
+}
+@mixin for-phone-only {
+  @media (max-width: $for-phone-only) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: $for-tablet-portrait-up) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: $for-tablet-landscape-up) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: $for-desktop-up) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: $for-big-desktop-up) {
+    @content;
+  }
+}

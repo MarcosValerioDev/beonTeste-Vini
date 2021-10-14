@@ -1,0 +1,71 @@
+.beon-easteregg {
+  position: static;
+
+  .beon-easteregg__trigger {
+    display: block;
+
+    .beon-easteregg__trigger-container {
+      background-color: red;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .beon-easteregg__prize {
+    display: none !important;
+
+    &.opened {
+      display: flex !important;
+    }
+  }
+
+  .beon-easteregg__prize--modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .beon-easteregg__prize-container {
+    display: flex;
+    width: 350px;
+    height: auto;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .beon-easteregg__prize-message,
+    .beon-easteregg__prize-asset,
+    .beon-easteregg__prize-continue {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .beon-easteregg__prize-message {
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .beon-easteregg__prize-asset {
+      font: monospace;
+      height: 60px;
+    }
+
+    .beon-easteregg__prize-continue {
+      height: 60px;
+      text-decoration: none;
+    }
+  }
+}

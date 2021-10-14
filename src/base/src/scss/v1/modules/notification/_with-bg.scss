@@ -1,0 +1,11 @@
+.beon-notificacao {
+  &.beon-notificacao--with-bg {
+    .beon-notificacao__cta {
+      background-color: rgba(0, 0, 0, 0.1);
+
+      .beon-notificacao__cta-label {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+$clock-label-height: 20px;
+
+.beon-clock.beon-clock--with-labels {
+  .beon-clock__fragment {
+    padding-top: 0.1em;
+    padding-bottom: $clock-label-height;
+    line-height: 0.8em;
+
+    &:before {
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding-left: 10px;
+      font-size: 10px;
+      font-family: sans-serif;
+      line-height: $clock-label-height;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    &.beon-clock__fragment-d:before {
+      content: "dia";
+    }
+    &.beon-clock__fragment-H:before {
+      content: "hora";
+    }
+    &.beon-clock__fragment-i:before {
+      content: "min";
+    }
+    &.beon-clock__fragment-s:before {
+      content: "seg";
+    }
+  }
+
+  &.beon-clock--faixa.beon-clock--narrow {
+    .beon-clock__fragment {
+      width: fit-content;
+
+      &:before {
+        font-size: 8px;
+      }
+    }
+  }
+}

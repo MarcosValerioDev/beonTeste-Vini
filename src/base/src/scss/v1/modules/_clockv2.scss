@@ -1,0 +1,19 @@
+.beon-clock {
+  display: none;
+
+  &.initialized {
+    display: block;
+  }
+
+  &.hide {
+    display: none !important;
+  }
+}
+
+/* components */
+@import "./clock/components/fragments/_digital.scss";
+@import "./clock/components/fragments/_inline.scss";
+
+/* layouts */
+@import "./clock/layouts/_tag.scss";
+@import "./clock/layouts/_banner.scss";

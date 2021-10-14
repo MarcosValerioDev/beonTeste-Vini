@@ -1,0 +1,70 @@
+.beon-clock.beon-clock--faixa.beon-clock--narrow {
+  .beon-clock__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1em;
+
+    .beon-faixa__lead,
+    .beon-faixa__clock,
+    .beon-faixa__cta {
+      display: flex;
+      width: auto !important;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .beon-faixa__lead {
+      order: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 0.5em;
+    }
+
+    .beon-faixa__clock {
+      order: 2;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .beon-clock__fragments {
+      font-size: 1em;
+    }
+
+    .beon-faixa__cta {
+      order: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .beon-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+      }
+    }
+
+    .beon-clock__component {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .beon-clock__fragments {
+        margin-left: 15px;
+        margin-right: 15px;
+        width: fit-content;
+      }
+      .beon-clock__fragment:after {
+        right: -12px;
+      }
+    }
+  }
+}

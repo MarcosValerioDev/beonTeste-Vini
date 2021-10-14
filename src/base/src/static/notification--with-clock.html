@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Template validation</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,700" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="/assets/@base/css/beon.css" />
+    <link rel="stylesheet" href="/assets/@base/css/default.css" />
+    <script src="/base/core/js/notification.js" charset="utf-8"></script>
+    <script src="/base/core/js/clock.js" charset="utf-8"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            console.log(event);
+            var BeonClock = new BeonClockInitializer();
+            var BeonNotification = new BeonNotificationInitializer();
+        });
+    </script>
+</head>
+
+<body>
+    <div id="parent-uuid">
+        <div class="beon-interaction beon-notificacao beon-notificacao__frete beon-notificacao__frete--_1 beon-notificacao--with-cta   beon-notificacao--padrao beon-notificacao--135deg beon-notificacao--with-delta beon-wrapper bn--with-clock"
+            data-config="{&quot;current_remaining&quot;: 149, &quot;auto_dismiss&quot;: 0, &quot;allow_dismiss&quot;: 0, &quot;dismiss_style&quot;: &quot;text&quot;, &quot;dismiss_label&quot;: &quot;Não, obrigado.&quot;, &quot;a&quot;:1}"
+            data-event-root="[null, &quot;notificacao_fretemaximo&quot;, null]">
+            <div class="beon-notificacao__inner">
+                <div class="beon-notificacao__headline"> <span>Aproveite! Frete Máximo pra sua região =)</span>
+                </div>
+                <div class="beon-notificacao__body"> <span><b>Para compras acima de R$ 149,00</b>, pague no máximo
+                        R$ 19,90 de frete</span> </div> <a data-track="click"
+                    data-event="[&quot;hit&quot;, null, &quot;stage_1&quot;]"
+                    class="beon-notificacao__cta beon-notificacao__cta--with-message" href="#close" data-bind="true">
+                    <span class="beon-notificacao__cta-message"> Falta apenas <strong><span class="currency">R$
+                            </span><span class="value">149,00</span></strong> </span> <span
+                        class="beon-notificacao__cta-label">Continuar comprando</span> </a>
+            </div>
+
+            <div class="beon-clock bn-clock--digital" id="element-uuid-clock" data-associate-id="parent-uuid"
+                data-config="{&quot;interval&quot;:&quot;interval&quot;;&quot;interval&quot;:&quot;60&quot;,&quot;hideOnEnd&quot;:true,&quot;aggregateDays&quot;:true, &quot;trim&quot;: 1}">
+                <div class="bn__container">
+                    <div class="bn-clock__component">
+                        <div class="bn-clock__headline"> Essas ofertas expiram em: </div>
+                        <div class="bn-clock__frags">
+                            <div class="bn-clock__frag bn-clock__frag-d">00</div>
+                            <div class="bn-clock__frag bn-clock__frag-H">05</div>
+                            <div class="bn-clock__frag bn-clock__frag-i">24</div>
+                            <div class="bn-clock__frag bn-clock__frag-s">50</div>
+                        </div>
+                        <div class="bn-clock__subtle"> Aproveita que dá tempo </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="beon-notificacao__delta"></span>
+        </div>
+    </div>
+
+    <script async src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.7"></script>
+</body>
+
+</html>

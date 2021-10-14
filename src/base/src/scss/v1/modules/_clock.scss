@@ -1,0 +1,32 @@
+.beon-clock,
+.bn-clock {
+  display: none;
+
+  font-size: 15px;
+
+  &.initialized {
+    display: block;
+  }
+
+  &.hide {
+    display: none !important;
+  }
+
+  /* themes */
+  @import "./clock/themes";
+
+  /* formats */
+  @import "./clock/format-digital";
+  @import "./clock/format-inline";
+
+  /* layout */
+  @import "./clock/position";
+  /* @import "./clock/direction"; */
+  @import "./clock/layout-faixa";
+  @import "./clock/layout-faixa_narrow";
+  @import "./clock/layout-tag";
+
+  /* modifications */
+  @import "./clock/with-labels";
+  @import "./clock/without-days";
+}

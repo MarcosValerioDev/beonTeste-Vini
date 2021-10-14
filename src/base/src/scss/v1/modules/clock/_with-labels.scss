@@ -1,0 +1,6 @@
+@import "./mixins/_labels.scss";
+
+&.beon-clock--with-labels,
+&.bn-clock--with-labels {
+  @include bn-clock--with-labels;
+}

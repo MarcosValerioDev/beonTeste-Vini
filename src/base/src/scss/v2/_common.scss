@@ -1,0 +1,14 @@
+.beon-region {
+  /* reset em on beon regions */
+  font-size: $def-fz;
+}
+
+.beon-container {
+  clear: both;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

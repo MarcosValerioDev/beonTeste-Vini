@@ -1,0 +1,64 @@
+.beon-showcase__item-badges {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  .beon-showcase__item-badge {
+    position: relative;
+    top: unset;
+    bottom: unset;
+    left: unset;
+    right: unset;
+
+    /* hide all badges, show specific ones later */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-height;
+    padding: 0;
+    color: #fff;
+    text-transform: uppercase;
+    order: 10;
+
+    box-sizing: border-box;
+  }
+
+  .beon-showcase__item-badge--off {
+    display: flex;
+    background-color: #e27c7c;
+    color: #fff;
+    font-weight: 600;
+    font-size: 11px;
+    border-radius: 20px;
+    width: 44px;
+    height: 21px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 21px;
+
+    @include for-tablet-portrait-up {
+      width: 46px;
+      height: 21px;
+      font-size: 11px;
+    }
+
+    .beon-showcase__item-discount {
+      display: flex;
+
+      &:before {
+        content: '-';
+        margin-right: 1px;
+        font-weight: 400;
+      }
+    }
+
+    //OFF text
+    .null {
+      display: none;
+    }
+
+    &.beon-showcase__item-badge--off-value {
+      display: none;
+    }
+  }
+}

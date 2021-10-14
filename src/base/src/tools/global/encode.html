@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Encode template and assets</title>
+    <style type="text/css">
+      #source,
+      #config,
+      #dist {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      #source,
+      #dist {
+        width: 39%;
+      }
+      textarea {
+        height: 450px;
+      }
+
+      #config {
+        width: 20%;
+      }
+      #options,
+      #compile {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" cols="30" rows="10"></textarea>
+
+    <div id="config">
+      <select id="options" multiple size="6">
+        <option value="convertDoubleQuotes"
+          >Converte double quotes to single quotes</option
+        >
+        <option value="escapeDoubleQuotes">Escape double quotes</option>
+        <option value="escapeSingleQuotes">Escape single quotes</option>
+        <option value="escapeSlash">Escape slashs</option>
+        <option value="encodeURI">Apply encodeURI funciton</option>
+        <option value="removeLineBreak">Remove line breaks</option>
+        <option value="removeWhiteSpaces">Remove excess white spaces</option>
+      </select>
+      <button id="compile">Compile</button>
+    </div>
+
+    <textarea id="dist" cols="30" rows="10"></textarea>
+
+    <script type="text/javascript">
+      var elSource = document.querySelector("#source");
+      var elDist = document.querySelector("#dist");
+      var elOptions = document.querySelector("#options");
+      var elCompile = document.querySelector("#compile");
+
+      elCompile.addEventListener("click", compileSourceToDist);
+
+      function compileSourceToDist() {
+        var source = elSource.value;
+        var options = getEnabledOptions();
+
+        if (options) {
+          options.forEach(function (method) {
+            if (methods[method]) {
+              console.log("applying method: " + method);
+              source = methods[method](source);
+            } else {
+              console.log("method not found: " + method);
+            }
+          });
+        }
+
+        elDist.value = source;
+      }
+
+      function getEnabledOptions() {
+        var result = [];
+        var options = elOptions && elOptions.options;
+        var opt;
+
+        for (var i = 0, iLen = options.length; i < iLen; i++) {
+          opt = options[i];
+
+          if (opt.selected) {
+            result.push(opt.value || opt.text);
+          }
+        }
+
+        return result;
+      }
+
+      var methods = {
+        convertDoubleQuotes: function (val) {
+          return val.replace(/"/gim, "'");
+        },
+        escapeDoubleQuotes: function (val) {
+          return val.replace(/"/gim, '\\"');
+        },
+        escapeSlash: function (val) {
+          return val.replace(/\\/gim, "\\\\");
+        },
+        encodeURI: function (val) {
+          return encodeURIComponent(val);
+        },
+        removeLineBreak: function (val) {
+          return val.replace(/\n/gim, "");
+        },
+        removeWhiteSpaces: function (val) {
+          return val.replace(/\s{2,}/gim, " ");
+        },
+      };
+    </script>
+  </body>
+</html>

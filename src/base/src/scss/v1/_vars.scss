@@ -1,0 +1,20 @@
+// default
+$def-ff: "Montserrat", "Helvetica Neue", Verdana, Arial, sans-serif;
+$def-fz: 13px;
+
+$def-c-stimulus: #000;
+$def-c-text: #333;
+$def-c-strong: #000;
+$def-c-subtle: #838383;
+
+$def-c-btn-pri-bg: #000;
+$def-c-btn-pri-fg: #fff;
+$def-c-btn-trans-bg: transparent;
+$def-c-btn-trans-fg: $def-c-subtle;
+
+// component
+@import "vars/showcase";
+@import "vars/banner";
+@import "vars/notification";
+@import "../v2/vars/_breakpoints.scss";
+@import "../v2/mixins/_breakpoints.scss";

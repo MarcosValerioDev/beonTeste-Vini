@@ -1,0 +1,71 @@
+.beon-clock.beon-clock--digital {
+  .beon-clock__component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+  }
+
+  .beon-clock__headline {
+    font-size: 1em;
+    color: inherit;
+  }
+
+  .beon-clock__subtle {
+    font-size: 0.7em;
+    color: inherit;
+  }
+
+  .beon-clock__fragments {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+
+    font-size: 1em;
+  }
+
+  .beon-clock__fragment {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 1em;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    line-height: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    color: inherit;
+
+    &:after {
+      position: absolute;
+      display: block;
+      right: -15px;
+      text-align: center;
+    }
+
+    &.beon-clock__fragment-d {
+      padding-left: 0;
+    }
+
+    &.beon-clock__fragment-d,
+    &.beon-clock__fragment-H,
+    &.beon-clock__fragment-i {
+      &:after {
+        content: ":";
+      }
+    }
+  }
+
+  .beon-clock__headline,
+  .beon-clock__subtle {
+    color: inherit;
+  }
+}

@@ -1,0 +1,46 @@
+.beon-clock {
+  display: none;
+
+  &.initialized {
+    display: block;
+  }
+
+  &.hide {
+    display: none !important;
+  }
+
+  /* sizes */
+  &,
+  &.beon-clock--large {
+    font-size: 30px;
+    border-width: 0.15em;
+  }
+
+  &.beon-clock--medium {
+    font-size: 20px;
+  }
+
+  &.beon-clock--small {
+    font-size: 14px;
+
+    .beon-clock__fragment:before {
+      font-size: 0.6em;
+    }
+  }
+}
+/* themes */
+@import "./clock/themes";
+
+/* formats */
+@import "./clock/format-digital";
+@import "./clock/format-inline";
+
+/* layout */
+@import "./clock/position";
+@import "./clock/layout-faixa";
+@import "./clock/layout-faixa_narrow";
+@import "./clock/layout-tag";
+
+/* modifications */
+@import "./clock/with-labels";
+@import "./clock/without-days";

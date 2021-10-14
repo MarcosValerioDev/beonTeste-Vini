@@ -1,0 +1,66 @@
+.beon-clock {
+  /* position */
+  $offset: 0.5em;
+
+  &.top-left,
+  &.top-middle,
+  &.top-right,
+  &.bottom-right,
+  &.bottom-middle,
+  &.bottom-left,
+  &.center,
+  &.center-left,
+  &.center-right {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  &.center,
+  &.top-middle,
+  &.bottom-middle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.center,
+  &.center-left,
+  &.center-right {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.center {
+    transform: translate(-50%, -50%);
+  }
+
+  &.top-left {
+    top: $offset;
+    left: $offset;
+  }
+  &.top-middle {
+    top: $offset;
+  }
+  &.top-right {
+    top: $offset;
+    right: $offset;
+  }
+  &.bottom-right {
+    bottom: $offset;
+    right: $offset;
+  }
+  &.bottom-middle {
+    bottom: $offset;
+  }
+  &.bottom-left {
+    bottom: $offset;
+    left: $offset;
+  }
+  &.center {
+  }
+  &.center-left {
+    left: $offset;
+  }
+  &.center-right {
+    right: $offset;
+  }
+}

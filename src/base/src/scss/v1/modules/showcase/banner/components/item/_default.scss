@@ -1,0 +1,72 @@
+.beon-showcase__item {
+  .beon-showcase__review,
+  .beon-showcase__item-tags,
+  .beon-showcase__item-details {
+    display: none;
+  }
+
+  .beon-showcase__item-title,
+  .beon-showcase__item-image,
+  .beon-showcase__item-description,
+  .beon-showcase__item-badges,
+  .beon-showcase__item-actions {
+    display: block;
+  }
+
+  .beon-showcase__item-title {
+    grid-area: title;
+  }
+  .beon-showcase__item-image {
+    grid-area: image;
+  }
+  .beon-showcase__item-description {
+    grid-area: description;
+  }
+  .beon-showcase__item-badges {
+    position: absolute;
+  }
+  .beon-showcase__item-actions {
+    grid-area: actions;
+  }
+
+  & {
+    position: relative;
+    display: grid;
+    grid-template:
+      "image . title"
+      "image . description"
+      "image . actions" / 50% 10px auto;
+    grid-template-rows: 50% auto auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 10px;
+    margin-right: 2px;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  @include for-tablet-landscape-up {
+    & {
+      height: $showcase-banner-default-height - 2;
+      grid-template:
+        "image . title"
+        "image . description"
+        "image . actions" / 50% 7px auto;
+
+      grid-template-rows: 40% auto auto;
+    }
+  }
+
+  @import "./default/components/_actions.scss";
+  @import "./default/components/_badges.scss";
+  @import "./default/components/_description.scss";
+  @import "./default/components/_details.scss";
+  @import "./default/components/_image.scss";
+  @import "./default/components/_pricebox.scss";
+  @import "./default/components/_rating.scss";
+  @import "./default/components/_references.scss";
+  @import "./default/components/_tags.scss";
+  @import "./default/components/_title.scss";
+}

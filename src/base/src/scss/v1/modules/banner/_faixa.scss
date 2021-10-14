@@ -1,0 +1,200 @@
+/* Qual componente está sendo impactado por isso? */
+.beon-banner.beon-banner--faixa {
+  &.beon-banner--grid {
+    .beon-banner__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.beon-banner {
+  &.beon-banner__faixa {
+    & {
+      width: 100%;
+      max-width: unset;
+    }
+
+    .beon-slider__frame {
+      width: 100%;
+      max-height: unset;
+      min-height: unset;
+    }
+
+    .beon-slider__slide {
+      height: $banner-faixa-slide-height;
+    }
+
+    /* grid definition */
+    .beon-container {
+      max-width: $banner-inner-max-width;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+      display: grid;
+
+      .beon-banner__headline {
+        grid-area: headline;
+      }
+
+      .beon-banner__lead {
+        grid-area: lead;
+      }
+
+      .beon-banner__cta {
+        grid-area: cta;
+      }
+    }
+
+    .beon-banner__headline,
+    .beon-banner__lead,
+    .beon-banner__cta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100%;
+    }
+
+    /* layout variations */
+    &.beon-banner__faixa--with-3col {
+      .beon-container {
+        grid-template:
+          "headline lead cta"
+          / 2fr 2fr 1fr;
+      }
+
+      .beon-banner__lead {
+        align-items: flex-start;
+      }
+      .beon-banner__cta {
+        align-items: center;
+      }
+
+      @media screen and (max-width: 425px) {
+        .beon-container {
+          padding: 10px;
+          grid-template:
+            "headline . cta"
+            "lead . cta"/2fr 10px 1fr;
+        }
+        .beon-banner__headline {
+          align-items: flex-start;
+          justify-content: flex-end;
+          font-size: 18px;
+        }
+        .beon-banner__lead {
+          align-items: flex-start;
+          justify-content: flex-start;
+          font-size: 14px;
+        }
+
+        .beon-banner__cta {
+          align-items: center;
+          font-size: 14px;
+
+          > a {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    &.beon-banner__faixa--with-2col-r {
+      .beon-container {
+        grid-template:
+          ". headline cta"
+          ". lead cta"
+          / 3fr 2fr 1fr;
+      }
+
+      .beon-banner__headline {
+        justify-content: flex-end;
+      }
+      .beon-banner__lead {
+        justify-content: flex-start;
+      }
+      .beon-banner__cta {
+        align-items: flex-end;
+      }
+    }
+
+    /* basic style */
+    .beon-banner__headline {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      line-height: 1.3em;
+
+      big {
+        font-size: 1.8em;
+      }
+    }
+
+    .beon-banner__lead {
+      padding-top: 0.4em;
+      font-size: 1.2em;
+      letter-spacing: -0.05em;
+      line-height: 1em;
+    }
+
+    .beon-banner__cta {
+      > a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        width: 100%;
+        height: 80px;
+        line-height: 1.5em;
+        margin-left: 10px;
+        margin-right: 0;
+        box-sizing: border-box;
+
+        font-size: 1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
+
+        border: 1px solid;
+        border-radius: 5px;
+
+        &:after {
+          content: "\2192";
+          font-size: 2em;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+
+  /* slider controls */
+  .tns-controls {
+    [data-controls] {
+      top: 0;
+      left: 50%;
+      right: unset;
+      width: 100px;
+      height: $banner-faixa-slide-height;
+      transform: translateY(0);
+
+      background-size: auto 40px;
+    }
+
+    [data-controls="prev"] {
+      margin-left: -$banner-inner-max-width / 2;
+    }
+
+    [data-controls="next"] {
+      margin-left: $banner-inner-max-width / 2;
+    }
+  }
+}

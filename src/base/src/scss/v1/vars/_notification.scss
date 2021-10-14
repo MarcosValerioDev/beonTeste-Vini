@@ -1,0 +1,64 @@
+/* positioning */
+$notificacao-position-offset: 20px;
+$notificacao-delta-square: 30px;
+
+$notificacao-border-width: 1px;
+$notificacao-border-style: solid;
+$notificacao-border-color: rgba(0, 0, 0, 0.3);
+
+/* clock */
+$notificacao-clock-bg: red;
+$notificacao-clock-fg: black;
+
+/* layout */
+$notificacao-padrao-fz: 13px;
+$notificacao-padrao-width: 20em;
+$notificacao-padrao-border-radius: 5px;
+$notificacao-padrao-padding: 20px;
+
+$notificacao-padrao-shadow-x: 0;
+$notificacao-padrao-shadow-y: 2px;
+$notificacao-padrao-shadow-blur: 30px;
+$notificacao-padrao-shadow-offset: -5px;
+$notificacao-padrao-shadow-color: rgba(0, 0, 0, 0.3);
+
+$notificacao-padrao-figure-height: 90px;
+$notificacao-padrao-figure-icon-square: 4em;
+$notificacao-padrao-figure-image-bgz: contain;
+$notificacao-padrao-figure-image-bgp: center center;
+$notificacao-padrao-figure-image-bgr: no-repeat;
+$notificacao-padrao-figure-image-bgc: transparent;
+
+$notificacao-padrao-headline-fz: 1em;
+$notificacao-padrao-headline-color: rgba(0, 0, 0, 0.9);
+$notificacao-padrao-headline-lh: 1.1em;
+$notificacao-padrao-headline-fw: bold;
+
+$notificacao-padrao-body-fz: 1em;
+$notificacao-padrao-body-color: rgba(0, 0, 0, 0.7);
+$notificacao-padrao-body-lh: 1em;
+$notificacao-padrao-body-fw: normal;
+
+$notificacao-padrao-cta-height: 4em;
+$notificacao-padrao-cta-fz: 1em;
+$notificacao-padrao-cta-fw: bold;
+$notificacao-padrao-cta-bgc: #333;
+$notificacao-padrao-cta-color: #fff;
+$notificacao-padrao-cta-td: none;
+$notificacao-padrao-cta-tt: uppercase;
+
+/* horizontal */
+$notificacao-horizontal-fz: 13px;
+$notificacao-horizontal-width: 35em;
+$notificacao-horizontal-border-radius: 5px;
+$notificacao-horizontal-padding: 10px;
+
+$notificacao-horizontal-shadow-x: $notificacao-padrao-shadow-x;
+$notificacao-horizontal-shadow-y: $notificacao-padrao-shadow-y;
+$notificacao-horizontal-shadow-blur: $notificacao-padrao-shadow-blur;
+$notificacao-horizontal-shadow-offset: $notificacao-padrao-shadow-offset;
+$notificacao-horizontal-shadow-color: $notificacao-padrao-shadow-color;
+
+$notificacao-horizontal-figure-height: 100%;
+$notificacao-horizontal-cta-height: 100%;
+$notificacao-horizontal-cta-max-width: 10em;

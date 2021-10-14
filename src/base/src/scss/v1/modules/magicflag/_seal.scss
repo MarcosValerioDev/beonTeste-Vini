@@ -1,0 +1,13 @@
+.beon-tags {
+  &.beon-tag__flag--seal,
+  &.beon-tag__dynamic--seal {
+    position: absolute;
+    z-index: 100;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

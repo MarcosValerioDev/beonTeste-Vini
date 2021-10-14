@@ -1,0 +1,18 @@
+$clock-label-height: 20px;
+
+.beon-clock.beon-clock--without-days {
+  .beon-clock__fragment-d {
+    display: none;
+  }
+
+  .beon-clock__fragment-H:before {
+    display: none !important;
+  }
+
+  &.beon-clock--inline {
+    .beon-clock__fragment-i:before {
+      content: "e" !important;
+      padding-left: 5px;
+    }
+  }
+}

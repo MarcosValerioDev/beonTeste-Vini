@@ -1,0 +1,20 @@
+@import "./fragment";
+
+%bn-clock__frags--digital {
+  display: flex;
+  width: max-content;
+  margin: 0 10px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+
+  /* set ff */
+
+  font-size: 2em;
+
+  .bn-clock__frag {
+    @extend %bn-clock__frag;
+  }
+}

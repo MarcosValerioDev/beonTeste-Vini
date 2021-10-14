@@ -1,0 +1,28 @@
+.beon-button {
+    display: inline-block;
+    width: 100%;
+    padding: 0.7em;
+    line-height: 2em;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.beon-button__label {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.beon-button--primary {
+    background-color: $def-c-btn-pri-bg;
+    color: $def-c-btn-pri-fg;
+    text-decoration: none;
+}
+
+.beon-button--transparent {
+    background-color: $def-c-btn-trans-bg;
+    color: $def-c-btn-trans-fg;
+    text-decoration: underline;
+}

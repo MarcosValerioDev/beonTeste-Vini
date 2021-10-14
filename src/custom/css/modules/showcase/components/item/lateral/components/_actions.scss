@@ -1,0 +1,42 @@
+/* import default */
+@import '../../default/components/_actions.scss';
+
+.beon-showcase__item-actions {
+  grid-area: actions;
+  height: auto;
+  width: 80%;
+  padding: 8px 0;
+  @include for-tablet-portrait-up {
+    padding: 5px 0;
+  }
+
+  &,
+  & .beon-button--primary {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0 !important;
+    margin: 0;
+
+    @include for-tablet-portrait-up {
+      margin: 0;
+    }
+  }
+
+  .beon-button {
+    max-width: 100%;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    margin: 0 !important;
+
+    span {
+      font-size: 13px !important;
+      line-height: 30px !important;
+
+      @include for-tablet-portrait-up {
+        font-size: 14px !important;
+      }
+    }
+  }
+}

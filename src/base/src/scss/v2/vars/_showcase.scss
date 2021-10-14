@@ -1,0 +1,36 @@
+// layout
+$showcase-container-max-width: auto;
+$showcase-title-max-width: 1200px;
+$showcase-slider-min-width: 1200px;
+$showcase-slider-max-width: auto;
+
+// Tipography and colors
+$showcase-ff: $def-ff;
+$showcase-fz: $def-fz;
+$showcase-lh: 1em;
+
+$showcase-c-stimulus: $def-c-stimulus;
+$showcase-c-text: $def-c-text;
+$showcase-c-strong: $def-c-strong;
+$showcase-c-subtle: $def-c-subtle;
+
+// Buttons
+$showcase-button-pri-bg: $showcase-c-stimulus;
+$showcase-button-pri-fg: $showcase-c-strong;
+$showcase-button-trans-bg: 'transparent';
+$showcase-button-trans-fg: $showcase-c-strong;
+
+// Slider
+$showcase-slider-padding-left: 40px;
+$showcase-slider-padding-right: 40px;
+$showcase-slider-item-width: 280px;
+$showcase-slider-item-padding: 15px;
+$showcase-slider-arrows-width: 35px;
+
+$showcase-slider-dots-width: 10px;
+$showcase-slider-dots-inactive-bgc: #CCC;
+$showcase-slider-dots-inactive-bd-sz: 0;
+$showcase-slider-dots-inactive-bd-c: transparent;
+$showcase-slider-dots-active-bgc: transparent;
+$showcase-slider-dots-active-bd-sz: 2px;
+$showcase-slider-dots-active-bd-c: $showcase-c-stimulus;

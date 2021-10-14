@@ -1,0 +1,113 @@
+.beon-clock.beon-clock--faixa {
+  width: 100%;
+
+  .beon-clock__container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .beon-faixa__lead,
+    .beon-faixa__clock,
+    .beon-faixa__cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .beon-faixa__lead {
+      order: 1;
+      width: 50%;
+      box-sizing: border-box;
+      text-align: right;
+      font-size: 1em;
+
+      strong {
+        font-size: 1.1em;
+      }
+    }
+
+    .beon-faixa__clock {
+      order: 2;
+      width: fit-content;
+      flex-direction: row;
+    }
+
+    .beon-clock__fragments {
+      font-size: 25px;
+    }
+
+    .beon-faixa__cta {
+      order: 3;
+      width: 20%;
+      font-size: 1.2em;
+
+      .beon-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .beon-clock.beon-clock--faixa {
+    .beon-clock__container {
+      flex-direction: column !important;
+      align-items: stretch;
+
+      .beon-faixa__lead,
+      .beon-faixa__clock,
+      .beon-faixa__cta {
+        width: 100% !important;
+        align-self: center;
+        text-align: center;
+      }
+
+      .beon-faixa__lead {
+        padding-right: 0 !important;
+        align-items: center;
+        padding-bottom: 0;
+        > span {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+
+      .beon-faixa__clock {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .beon-clock__subtle {
+        display: none;
+      }
+
+      .beon-faixa__cta {
+        align-items: center;
+        padding-bottom: 10px !important;
+      }
+    }
+  }
+
+  .beon-clock.beon-clock--faixa.beon-clock--narrow {
+    .beon-clock__component {
+      flex-direction: column !important;
+    }
+
+    .beon-faixa__lead {
+      padding-top: 10px !important;
+    }
+
+    .beon-faixa__clock {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+}

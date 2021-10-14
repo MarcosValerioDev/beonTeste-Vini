@@ -1,0 +1,17 @@
+.beon-showcase__item-tags {
+  & {
+    display: none;
+
+    @include for-desktop-up {
+      /* display: flex; */
+    }
+  }
+
+  .beon-tag {
+    /*  */
+  }
+
+  .beon-tag--frete-gratis {
+    /*  */
+  }
+}

@@ -1,0 +1,182 @@
+@import "./notification/position";
+@import "./notification/scale";
+@import "./notification/animation";
+@import "./notification/with-delta";
+@import "./notification/with-figure";
+@import "./notification/with-cta";
+@import "./notification/with-bg";
+@import "./notification/with-clock";
+@import "./notification/dismiss";
+@import "./notification/frete";
+
+@import "./clock/mixins/_direction.scss";
+@import "./clock/mixins/_labels.scss";
+
+.beon-notificacao {
+  @extend .bn--hide;
+
+  width: 100%;
+  padding: 0 $notificacao-position-offset / 2;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include for-desktop-up {
+    padding: 0;
+  }
+
+  .beon-notificacao__inner {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    z-index: 7;
+    /* border: $notificacao-border-width $notificacao-border-style
+      $notificacao-border-color; */
+  }
+
+  .beon-notificacao__figure {
+    display: none;
+  }
+
+  .beon-notificacao__headline {
+    display: flex;
+    grid-area: headline;
+
+    font-size: $notificacao-padrao-headline-fz;
+    line-height: $notificacao-padrao-headline-lh;
+    font-weight: $notificacao-padrao-headline-fw;
+    color: $notificacao-padrao-headline-color;
+  }
+
+  .beon-notificacao__body {
+    display: flex;
+    grid-area: body;
+
+    font-size: $notificacao-padrao-body-fz;
+    line-height: $notificacao-padrao-body-lh;
+    font-weight: $notificacao-padrao-body-fw;
+    color: $notificacao-padrao-body-color;
+  }
+
+  /* layout padrao */
+  &.beon-notificacao--padrao {
+    @extend %horizontal;
+
+    @include for-tablet-landscape-up {
+      width: unset;
+      @extend %vertical;
+    }
+  }
+
+  /* horizontal */
+  &.beon-notificacao--horizontal {
+    @extend %horizontal;
+  }
+}
+
+%horizontal {
+  font-size: $notificacao-horizontal-fz;
+  max-width: $notificacao-horizontal-width;
+
+  @include for-desktop-up {
+    width: $notificacao-horizontal-width;
+  }
+
+  @include for-phone-only {
+    transform: scale(0.8);
+    transform-origin: left bottom;
+    width: 450px;
+  }
+
+  .beon-notificacao__inner {
+    width: 100%;
+    border-radius: $notificacao-horizontal-border-radius;
+    box-shadow: $notificacao-horizontal-shadow-x
+      $notificacao-horizontal-shadow-y $notificacao-horizontal-shadow-blur
+      $notificacao-horizontal-shadow-offset $notificacao-horizontal-shadow-color;
+    background-color: white;
+
+    grid-template:
+      "figure headline cta"
+      "figure body cta"
+      "clock clock clock"
+      / max-content auto auto;
+  }
+
+  .beon-notificacao__headline {
+    align-items: flex-end;
+    padding-left: $notificacao-horizontal-padding;
+    padding-right: $notificacao-horizontal-padding;
+    margin-top: $notificacao-horizontal-padding;
+    min-width: 15em;
+  }
+
+  .beon-notificacao__body {
+    align-items: flex-start;
+    margin-top: $notificacao-horizontal-padding;
+    margin-bottom: $notificacao-horizontal-padding;
+    padding-left: $notificacao-horizontal-padding;
+    padding-right: $notificacao-horizontal-padding;
+    min-width: 15em;
+  }
+
+  .beon-notificacao__cta {
+    height: $notificacao-horizontal-cta-height;
+
+    .beon-notificacao__cta-label {
+      text-align: center;
+    }
+  }
+
+  &.bn--with-clock {
+    .beon-clock {
+      @include bn-clock--horizontal;
+      @include bn-clock--without-labels;
+    }
+  }
+
+  .beon-notificacao__delta {
+    display: none;
+  }
+}
+
+@include for-tablet-landscape-up {
+  %vertical {
+    width: $notificacao-padrao-width;
+    font-size: $notificacao-padrao-fz;
+
+    .beon-notificacao__inner {
+      border-radius: $notificacao-padrao-border-radius;
+      box-shadow: $notificacao-padrao-shadow-x $notificacao-padrao-shadow-y
+        $notificacao-padrao-shadow-blur $notificacao-padrao-shadow-offset
+        $notificacao-padrao-shadow-color;
+      background-color: white;
+      grid-template:
+        "figure"
+        "headline"
+        "body"
+        "cta"
+        "clock"
+        / 1fr;
+    }
+
+    .beon-notificacao__headline {
+      padding-left: $notificacao-padrao-padding;
+      padding-right: $notificacao-padrao-padding;
+    }
+
+    .beon-notificacao__body {
+      margin-top: $notificacao-padrao-padding;
+      margin-bottom: $notificacao-padrao-padding;
+      padding-left: $notificacao-padrao-padding;
+      padding-right: $notificacao-padrao-padding;
+    }
+
+    &.bn--with-clock {
+      .beon-clock {
+        @include bn-clock--vertical;
+        @include bn-clock--with-labels;
+      }
+    }
+  }
+}

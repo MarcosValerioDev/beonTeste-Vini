@@ -1,0 +1,27 @@
+.beon-showcase__item-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0 !important;
+  max-height: unset;
+  min-height: unset;
+  padding: 0;
+  border: 0;
+
+  a {
+    position: static;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include for-tablet-landscape-up {
+    img {
+      width: auto;
+      height: $showcase-banner-default-height - 20;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import "./_with-cta--default.scss";
+
+&.beon-showcase--with-cta {
+  @include for-tablet-portrait-up {
+    .beon-showcase__head-inner {
+      display: grid;
+      padding-right: 20px;
+      grid-template:
+        "headline headline"
+        "lead lead" / auto auto;
+
+      .beon-showcase__headline {
+        grid-area: headline;
+        text-align: left;
+      }
+
+      .beon-showcase__lead {
+        grid-area: lead;
+        text-align: left;
+        margin-top: 0;
+      }
+
+      .beon-showcase__cta {
+        display: none;
+      }
+
+      .beon-showcase__lead,
+      .beon-showcase__cta {
+        align-items: center;
+      }
+    }
+  }
+
+  @include for-desktop-up {
+    .beon-showcase__head-inner {
+      grid-template:
+        "headline headline"
+        "lead cta" / auto auto;
+
+      .beon-showcase__cta {
+        grid-area: cta;
+        margin-top: 0;
+        width: 170px;
+        padding-left: 30px;
+      }
+    }
+  }
+}

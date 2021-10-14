@@ -1,0 +1,25 @@
+@mixin bn-clock--horizontal {
+  .bn-clock__component {
+    flex-direction: row;
+
+    .bn-clock__frags {
+      font-size: 1em;
+    }
+  }
+}
+
+@mixin bn-clock--vertical {
+  .bn-clock__component {
+    flex-direction: column;
+
+    .bn-clock__headline {
+      text-align: center;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+
+    .bn-clock__frags {
+      font-size: 1.5em;
+    }
+  }
+}

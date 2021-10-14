@@ -1,0 +1,25 @@
+.beon-notificacao {
+  &.bn--with-clock {
+    .beon-clock,
+    .bn-clock {
+      position: relative;
+      display: block;
+      z-index: 1;
+      width: 100%;
+      height: max-content;
+      margin-top: -$notificacao-horizontal-border-radius;
+      padding-top: 15px;
+      padding-bottom: 5px;
+      background: $notificacao-clock-bg;
+      color: $notificacao-clock-fg;
+      border-radius: 0 0 $notificacao-horizontal-border-radius
+        $notificacao-horizontal-border-radius;
+      font-size: 20px;
+
+      /* on notificatoins do not allow subtitles */
+      .bn-clock__subtle {
+        display: none;
+      }
+    }
+  }
+}

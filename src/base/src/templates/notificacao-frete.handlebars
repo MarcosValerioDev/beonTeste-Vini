@@ -1,0 +1,99 @@
+<div class='beon-interaction
+    beon-notificacao
+    beon-notificacao__frete
+    beon-notificacao__frete--{{{element.notification.stage}}}
+    {{#if element.notification.stage_1}}{{#if element.template.params.stage1_icon}}beon-notificacao--with-figure{{/if}}{{/if}}
+    {{#if element.notification.stage_2}}{{#if element.template.params.stage2_icon}}beon-notificacao--with-figure{{/if}}{{/if}}
+    {{#if element.notification.stage_1}}beon-notificacao--with-cta{{/if}}
+    {{#if element.notification.stage_2}}{{#if element.template.params.stage2_cta_link}}beon-notificacao--with-cta{{/if}}{{/if}}
+    beon-notificacao--{{element.template.params.layout}}
+    beon-notificacao--{{element.template.params.screen_position}}
+    {{#ifcond element.template.params.clock_show 'eq' 'sim'}}bn--with-clock{{/ifcond}}
+    beon-notificacao--with-delta
+    beon-wrapper {{element.template.params.container_class}}' data-config='{&quot;current_remaining&quot; :
+    {{element.notification.remaining_subtotal}}, &quot;auto_dismiss&quot; :
+    {{element.template.params.auto_dismiss}}, &quot;allow_dismiss&quot; :
+    {{element.template.params.allow_dismiss}}, &quot;dismiss_style&quot; : &quot;{{element.template.params.dismiss_style}}&quot;
+    , &quot;dismiss_label&quot; : &quot;{{element.template.params.dismiss_label}}&quot; , &quot;a&quot; :1}'
+    style='font-size:{{element.template.params.custom_notf_body_fz}};{{element.template.params.container_style}}'
+    data-event-root='[null, &quot;{{element.template.params.event_label}}&quot;, null]'>
+    {{#if element.notification.stage_1}}
+    <div class='beon-notificacao__inner'
+        style='background-color:{{element.template.params.custom_notf_body_bg}};color:{{element.template.params.custom_notf_body_fg}};font-size:{{element.template.params.custom_notf_body_fz}};'>
+        {{#if element.template.params.stage1_icon}}
+        <div class='beon-notificacao__figure'>
+            <i class='beon-icon--emoji'>{{element.template.params.stage1_icon}}</i>
+        </div>
+        {{/if}}
+        <div class='beon-notificacao__headline'
+            style='color:{{element.template.params.custom_notf_body_fg}};font-size:{{element.template.params.custom_notf_headline_fz}};'>
+            <span>{{{element.template.params.stage1_headline}}}</span>
+        </div>
+        <div class='beon-notificacao__body'
+            style='color:{{element.template.params.custom_notf_body_fg}};font-size:{{element.template.params.custom_notf_body_fz}};'>
+            <span>{{{element.template.params.stage1_message}}}</span>
+        </div>
+        <a class='beon-notificacao__cta beon-notificacao__cta--with-message'
+            {{#if element.template.params.stage1_cta_link}}href='{{element.template.params.stage1_cta_link}}' {{else}}
+            href='#close' {{/if}} data-track='click' data-event='[&quot;hit&quot;, null, &quot;estágio 1&quot; ]'
+            style='background-color:{{element.template.params.custom_notf_cta_bg}};color:{{element.template.params.custom_notf_cta_fg}};'>
+            <span class='beon-notificacao__cta-message'>
+                {{{element.template.params.stage1_cta_message}}}
+                <strong>{{currency element.notification.remaining_subtotal}}</strong>
+            </span>
+            {{#if element.template.params.stage1_cta_label}}
+            <span class='beon-notificacao__cta-label'>{{{element.template.params.stage1_cta_label}}}</span>
+            {{/if}}
+        </a>
+    </div>
+    {{else}}
+    <div class='beon-notificacao__inner'
+        style='background-color:{{element.template.params.custom_notf_body_bg}};color:{{element.template.params.custom_notf_body_fg}};font-size:{{element.template.params.custom_notf_body_fz}};'>
+        {{#if element.template.params.stage2_icon}}
+        <div class='beon-notificacao__figure'>
+            <i class='beon-icon--emoji'>{{element.template.params.stage2_icon}}</i>
+        </div>
+        {{/if}}
+        <div class='beon-notificacao__headline'
+            style='color:{{element.template.params.custom_notf_body_fg}};font-size:{{element.template.params.custom_notf_headline_fz}};'>
+            <span>{{{element.template.params.stage2_headline}}}</span>
+        </div>
+        <div class='beon-notificacao__body'
+            style='color:{{element.template.params.custom_notf_body_fg}};font-size:{{element.template.params.custom_notf_body_fz}};'>
+            <span>{{{element.template.params.stage2_message}}}</span>
+        </div>
+        {{#if element.template.params.stage1_cta_label}}
+        <a class='beon-notificacao__cta'
+            {{#if element.template.params.stage2_cta_link}}href='{{element.template.params.stage2_cta_link}}' {{/if}}
+            data-track='click' data-event='[' hit', null, 'estágio 2' ]'
+            style='background-color:{{element.template.params.custom_notf_cta_bg}};color:{{element.template.params.custom_notf_cta_fg}};'>
+            <span class='beon-notificacao__cta-label'>{{{element.template.params.stage2_cta_label}}}</span>
+        </a>
+        {{/if}}
+    </div>
+    {{/if}}
+
+    {{#ifcond element.template.params.clock_show 'eq' 'sim'}}
+    <div class='bn-banner__clock'>
+        <div class='beon-clock bn-clock--digital {{#if ../element.template.params.clock_with_labels}}bn-clock--with-labels{{/if}}'
+            id='{{../element._id}}-clock' data-associate-id='beon-element-{{../element._id}}'
+            data-config='{&quot;type&quot;:&quot;{{../element.template.params.clock_timer_type}}&quot;,&quot;interval&quot;:&quot;{{../element.template.params.clock_interval}}&quot;,&quot;start_date&quot;:&quot;{{../element.template.params.clock_start_datetime}}&quot;,&quot;end_date&quot;:&quot;{{../element.template.params.clock_end_datetime}}&quot;,&quot;hideOnEnd&quot;:{{../element.template.params.clock_hide_on_end}},&quot;aggregateDays&quot;:{{../element.template.params.clock_aggregate_days}}, &quot;trim&quot;: 1}'
+            style='background-color:{{../element.template.params.custom_clock_bg}};color:{{../element.template.params.custom_clock_fg}};font-size:{{../element.template.params.custom_clock_fz}};'>
+            <div class='bn__container'>
+                <div class='bn-clock__component'>
+                    <div class='bn-clock__headline'>{{../element.template.params.clock_headline}}</div>
+                    <div class='bn-clock__frags'>
+                        <div class='bn-clock__frag bn-clock__frag-d'>00</div>
+                        <div class='bn-clock__frag bn-clock__frag-H'>00</div>
+                        <div class='bn-clock__frag bn-clock__frag-i'>00</div>
+                        <div class='bn-clock__frag bn-clock__frag-s'>00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/ifcond}}
+
+    <span class='beon-notificacao__delta' {{#if element.template.params.background_color}}
+        style='background-color:{{element.template.params.background_color}}' {{/if}}></span>
+</div>

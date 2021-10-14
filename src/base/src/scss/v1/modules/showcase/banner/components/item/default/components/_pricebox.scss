@@ -1,0 +1,92 @@
+.beon-showcase__item-price-box {
+  & {
+    display: grid;
+  }
+
+  &.beon-showcase__item-price-box--simple {
+    grid-template:
+      "price_from"
+      "installments" / 1fr;
+  }
+
+  &.beon-showcase__item-price-box--special {
+    grid-template:
+      "price_from"
+      "price_to"
+      "installments" / 1fr;
+
+    grid-template-rows: 1.2em;
+
+    @include for-tablet-portrait-up {
+      grid-template:
+        "price_from . price_to"
+        "installments installments installments" / min-content 3px auto;
+    }
+  }
+
+  /* preços */
+  .beon-showcase__item-price {
+    display: inline;
+    white-space: nowrap;
+
+    .prefix {
+      display: inline;
+      text-transform: lowercase;
+    }
+  }
+
+  &.beon-showcase__item-price-box--simple .beon-showcase__item-price {
+    grid-area: price_from;
+  }
+
+  .beon-showcase__item-price--from {
+    grid-area: price_from;
+
+    color: #666;
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 20px;
+    text-decoration: line-through;
+
+    .beon-showcase__price {
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+
+  .beon-showcase__item-price--to {
+    grid-area: price_to;
+  }
+
+  &.beon-showcase__item-price-box--simple .beon-showcase__item-price,
+  .beon-showcase__item-price--to {
+    font-size: 13px;
+    line-height: 20px;
+    color: #131a22;
+    font-weight: 700;
+
+    .beon-showcase__price {
+      display: inline;
+      font-size: inherit;
+      color: inherit;
+      font-weight: inherit;
+    }
+  }
+
+  /* parcelamento */
+  .beon-showcase__item-installments {
+    grid-area: installments;
+    display: block;
+    color: #656565;
+    font-size: 12px;
+
+    .beon-interaction__installmentsCount:before {
+      content: "em até ";
+    }
+  }
+
+  /* à vista */
+  .beon-showcase__item-avista {
+    display: none;
+  }
+}

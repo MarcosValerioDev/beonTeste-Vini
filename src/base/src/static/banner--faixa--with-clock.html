@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Template validation</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,700" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="/assets/@base/css/beon.css" />
+    <link rel="stylesheet" href="/assets/@base/css/default.css" />
+    <script src="/base/core/js/notification.js" charset="utf-8"></script>
+    <script src="/base/core/js/clock.js" charset="utf-8"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            console.log(event);
+            var BeonClock = new BeonClockInitializer();
+            var BeonNotification = new BeonNotificationInitializer();
+        });
+    </script>
+</head>
+
+<body>
+    <div id="parent-uuid">
+        <div class="beon-interaction bn-banner bn-banner--faixa bn-banner--padrao bn--with-clock"
+            data-event-root="[null, &quot;notificacao_fretemaximo&quot;, null]"
+            style="background-color: #333; color: white;">
+            <div class="bn-banner__inner">
+                <div class="bn-banner__headline" style="background-color: transparent; color: lime; font-size: 1.5em;">
+                    <span>Últimas horas com
+                        preços de Black Friday.
+                        <strong>Aproveite!</strong></span>
+                </div>
+                <div class="bn-banner__clock">
+                    <div class="beon-clock bn-clock--with-labels bn-clock--digital bn-clock-std" id="element-uuid-clock"
+                        data-associate-id="parent-uuid"
+                        data-config="{&quot;type&quot;:&quot;interval&quot;,&quot;interval&quot;:&quot;60&quot;,&quot;hideOnEnd&quot;:true,&quot;aggregateDays&quot;:true, &quot;trim&quot;: 1}"
+                        style="background-color: transparent; color: inherit;">
+                        <div class="bn__container">
+                            <div class="bn-clock__component">
+                                <div class="bn-clock__headline"> Essas ofertas expiram em: </div>
+                                <div class="bn-clock__frags" style="font-size: 65px; color: lime;">
+                                    <div class="bn-clock__frag bn-clock__frag-d">00</div>
+                                    <div class="bn-clock__frag bn-clock__frag-H">05</div>
+                                    <div class="bn-clock__frag bn-clock__frag-i">24</div>
+                                    <div class="bn-clock__frag bn-clock__frag-s">50</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bn-banner__cta">
+                    <a class="beon-button bn-cta" href="#"
+                        style="background-color: lime; color: black; font-size: 1em; border: 2px solid;">
+                        <span class="beon-button__label">VEJA AS MELHORES OFERTAS!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="parent-uuid2" style="margin-top: 30px;">
+        <div class="beon-interaction bn-banner bn-banner--faixa bn-banner--compacto bn--with-clock"
+            data-event-root="[null, &quot;notificacao_fretemaximo&quot;, null]">
+            <div class="bn-banner__inner">
+                <div class="bn-banner__headline"> <span>Últimas horas com preços de Black Friday.
+                        <strong>Aproveite!</strong></span>
+                </div>
+                <div class="bn-banner__clock">
+                    <div class="beon-clock bn-clock--with-labels bn-clock--digital bn-clock-std"
+                        id="element-uuid-clock2" data-associate-id="parent-uuid2"
+                        data-config="{&quot;interval&quot;:&quot;60&quot;,&quot;hideOnEnd&quot;:true,&quot;aggregateDays&quot;:true, &quot;trim&quot;: 1}">
+                        <div class="bn__container">
+                            <div class="bn-clock__component">
+                                <div class="bn-clock__headline"> Essas ofertas expiram em: </div>
+                                <div class="bn-clock__frags">
+                                    <div class="bn-clock__frag bn-clock__frag-d">00</div>
+                                    <div class="bn-clock__frag bn-clock__frag-H">05</div>
+                                    <div class="bn-clock__frag bn-clock__frag-i">24</div>
+                                    <div class="bn-clock__frag bn-clock__frag-s">50</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bn-banner__cta">
+                    <a class="beon-button bn-cta" href="#">
+                        <span class="beon-button__label">VEJA AS MELHORES OFERTAS!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script async src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.7"></script>
+</body>
+
+</html>

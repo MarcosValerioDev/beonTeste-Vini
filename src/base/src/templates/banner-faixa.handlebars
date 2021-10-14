@@ -1,0 +1,46 @@
+<div class='beon-interaction bn-banner bn-banner--faixa bn-banner--{{element.template.params.layout}} {{#ifcond element.template.params.clock_show 'eq' 'sim'}}bn--with-clock{{/ifcond}} {{element.template.params.container_class}}'
+    style='background-color: {{element.template.params.custom_banner_bg}}; color: {{element.template.params.custom_banner_fg}}; {{#if element.template.params.custom_banner_maxwidth}}max-width: {{element.template.params.custom_banner_maxwidth}};{{/if}} {{element.template.params.container_style}}'
+    data-event-root='[null, "{{element.template.params.event_label}}", null]'>
+
+    <div class='bn-banner__inner'
+        {{#if element.template.params.custom_banner_justify}}style='justify-content: {{element.template.params.custom_banner_justify}}'
+        {{/if}}>
+        {{#if element.template.params.banner_headline}}
+        <div class='bn-banner__headline bn--{{element.template.params.custom_headline_align}}'
+            style='color: {{element.template.params.custom_headline_fg}}; font-size: {{element.template.params.custom_headline_fz}};'>
+            <span>{{{element.template.params.banner_headline}}}</span>
+        </div>
+        {{/if}}
+
+        {{#ifcond element.template.params.clock_show 'eq' 'sim'}}
+        <div class='bn-banner__clock'>
+            <div class='beon-clock bn-clock--digital {{#if ../element.template.params.clock_with_labels}}bn-clock--with-labels{{/if}}'
+                id='{{../element._id}}-clock' data-associate-id='beon-element-{{../element._id}}'
+                data-config='{&quot;type&quot;:&quot;{{../element.template.params.clock_timer_type}}&quot;,&quot;interval&quot;:&quot;{{../element.template.params.clock_interval}}&quot;,&quot;start_date&quot;:&quot;{{../element.template.params.clock_start_datetime}}&quot;,&quot;end_date&quot;:&quot;{{../element.template.params.clock_end_datetime}}&quot;,&quot;hideOnEnd&quot;:{{../element.template.params.clock_hide_on_end}},&quot;aggregateDays&quot;:{{../element.template.params.clock_aggregate_days}}, &quot;trim&quot;: 1}'
+                style='background-color:{{../element.template.params.custom_clock_bg}};color:{{../element.template.params.custom_clock_fg}};font-size:{{../element.template.params.custom_clock_fz}};'>
+                <div class='bn__container'>
+                    <div class='bn-clock__component'>
+                        <div class='bn-clock__headline'>{{../element.template.params.clock_headline}}</div>
+                        <div class='bn-clock__frags'>
+                            <div class='bn-clock__frag bn-clock__frag-d'>00</div>
+                            <div class='bn-clock__frag bn-clock__frag-H'>00</div>
+                            <div class='bn-clock__frag bn-clock__frag-i'>00</div>
+                            <div class='bn-clock__frag bn-clock__frag-s'>00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/ifcond}}
+
+        {{#ifcond element.template.params.cta_show 'eq' 'sim'}}
+        <div class='bn-banner__cta'>
+            <a class='beon-button bn-cta' href='{{../element.template.params.cta_link}}'
+                style='background-color: {{../element.template.params.custom_cta_bg}}; color: {{../element.template.params.custom_cta_fg}}; font-size: {{../element.template.params.custom_cta_fz}}; border: {{../element.template.params.custom_cta_border}};'
+                data-track='click' data-event='["hit", null, null]'>
+                <span class='beon-button__label'>{{../element.template.params.cta_label}}</span>
+            </a>
+        </div>
+        {{/ifcond}}
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.beon-clock--tag {
+  .beon-clock__component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+  }
+
+  .beon-clock__headline {
+    font-size: 1em;
+    color: inherit;
+  }
+
+  .beon-clock__subtle {
+    font-size: 0.7em;
+    color: inherit;
+  }
+
+  .beon-clock__headline,
+  .beon-clock__subtle {
+    color: inherit;
+  }
+
+  &.beon-clock--digital {
+    &.beon-clock--compact {
+      /*  */
+    }
+  }
+
+  &.beon-clock--inline {
+    &.beon-clock--compact {
+      /*  */
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.beon-showcase__item-actions {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  [data-action="buy"] {
+    display: inline-block;
+    border-radius: 0;
+    padding: 0;
+    color: $def-c-btn-pri-fg;
+    background: transparent;
+    line-height: 1em;
+
+    .beon-button__label {
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: underline;
+      letter-spacing: 0.7px;
+    }
+  }
+
+  [data-action="details"] {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    & {
+      margin-bottom: 0;
+      margin-top: 8px !important;
+
+      [data-action="buy"] {
+        display: block;
+        color: $def-c-btn-pri-fg !important;
+        background: $def-c-btn-pri-bg !important;
+        border: 1px solid #cbdbee;
+        padding: 11px;
+        line-height: 13px;
+
+        .beon-button__label {
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+}

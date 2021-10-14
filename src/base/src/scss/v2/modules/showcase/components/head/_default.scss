@@ -1,0 +1,39 @@
+.beon-showcase__head,
+.beon-showcase__head--default {
+  & {
+    position: relative;
+    width: 100%;
+    text-align: left;
+  }
+
+  .beon-showcase__head-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    box-sizing: border-box;
+    max-width: $showcase-carousel--default-container-w;
+    padding-left: $showcase-carousel--default-container-pl;
+    padding-right: $showcase-carousel--default-container-pr;
+
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2em;
+  }
+
+  .beon-showcase__title {
+    font-size: 2em;
+  }
+
+  .beon-showcase__viewmore {
+    font-size: 1.2em;
+    /* color: $showcase-c-stimulus; */
+    text-decoration: none;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}

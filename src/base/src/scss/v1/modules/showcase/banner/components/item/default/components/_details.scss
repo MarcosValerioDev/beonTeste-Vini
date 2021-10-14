@@ -1,0 +1,40 @@
+.beon-showcase__item-details {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: $def-c-subtle;
+
+  li {
+    display: none;
+  }
+
+  .detail-author {
+    display: block;
+    padding: 0 0 0 6px;
+    margin-bottom: 16px;
+    min-height: 30px;
+    font-size: 14px;
+
+    @include for-tablet-portrait-up {
+      min-height: 57px;
+      font-size: 14px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      color: #656565;
+      line-height: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .detail-format {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    display: block;
+    color: #46586c;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+  }
+}

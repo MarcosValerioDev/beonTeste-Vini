@@ -1,0 +1,15 @@
+.beon-showcase--fullwidth,
+&.beon-showcase--fullwidth {
+  max-width: 100%;
+  width: 100%;
+
+  @include for-big-desktop-up {
+    .beon-showcase__items-wrapper {
+      justify-content: flex-start;
+
+      .beon-slider__frame {
+        margin-left: 100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "./_default.scss";
+
+.beon-showcase__item {
+  @include for-tablet-portrait-up {
+    & {
+      height: $showcase-banner-compact-height - 2;
+      grid-template:
+        "image . title"
+        "image . description" / 50% 7px auto;
+
+      grid-template-rows: 1fr 1.5fr;
+    }
+
+    .beon-showcase__item-actions {
+      display: none;
+    }
+
+    .beon-showcase__item-description {
+      justify-content: flex-start;
+    }
+
+    .beon-showcase__item-image {
+      img {
+        width: auto;
+        height: $showcase-banner-compact-height - 5;
+      }
+    }
+  }
+}

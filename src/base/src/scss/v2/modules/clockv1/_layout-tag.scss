@@ -1,0 +1,38 @@
+.beon-clock.beon-clock--tag {
+  display: block;
+
+  .beon-clock__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .beon-clock__component {
+    width: fit-content;
+    padding: 0.4em;
+    text-align: center;
+    border: 0.1em solid;
+    border-radius: 0.5em;
+  }
+
+  .beon-clock__fragments {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+  }
+
+  .beon-clock__fragment {
+    text-align: center;
+    padding-left: 15px;
+
+    &:after {
+      right: -11px;
+    }
+  }
+
+  &.beon-clock--big {
+    font-size: 25px;
+  }
+
+  &.beon-clock--narrow {
+  }
+}
