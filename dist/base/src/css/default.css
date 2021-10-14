@@ -1,0 +1,1654 @@
+/* global */
+/* banner */
+/* default */
+/* hero */
+/* compact */
+/* clock */
+/* $banner-button-pri-bg: $def-c-btn-pri-bg; */
+/* positioning */
+/* clock */
+/* layout */
+/* horizontal */
+.bn--hide, .beon-notificacao,
+.bn--none {
+  display: none !important;
+}
+
+.bn--block {
+  display: block !important;
+}
+
+.bn--flex {
+  display: flex !important;
+}
+
+.bn--grid {
+  display: grid !important;
+}
+
+.beon-container {
+  clear: both;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* components */
+.beon-notificacao--0deg,
+.beon-notificacao--45deg,
+.beon-notificacao--90deg,
+.beon-notificacao--135deg,
+.beon-notificacao--180deg,
+.beon-notificacao--225deg,
+.beon-notificacao--270deg,
+.beon-notificacao--315deg {
+  position: fixed;
+  z-index: 9999;
+  top: unset;
+  right: unset;
+  left: unset;
+  bottom: unset;
+}
+
+/* on mobile devices, from half-top ones */
+.beon-notificacao--0deg,
+.beon-notificacao--45deg,
+.beon-notificacao--315deg {
+  left: 0;
+  top: 20px;
+}
+
+/* on mobile devices, from half-bottom ones */
+.beon-notificacao--90deg,
+.beon-notificacao--270deg,
+.beon-notificacao--135deg,
+.beon-notificacao--180deg,
+.beon-notificacao--225deg {
+  left: 0;
+  bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .beon-notificacao--0deg {
+    top: 20px;
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+  }
+
+  .beon-notificacao--45deg {
+    top: 20px;
+    right: 20px;
+    left: unset;
+  }
+
+  .beon-notificacao--90deg {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    left: unset;
+  }
+
+  .beon-notificacao--135deg {
+    bottom: 20px;
+    right: 20px;
+    left: unset;
+  }
+
+  .beon-notificacao--180deg {
+    bottom: 20px;
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+  }
+
+  .beon-notificacao--225deg {
+    bottom: 20px;
+    left: 20px;
+    right: unset;
+  }
+
+  .beon-notificacao--270deg {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    right: unset;
+  }
+
+  .beon-notificacao--315deg {
+    top: 20px;
+    left: 20px;
+    right: unset;
+  }
+}
+.beon-notificacao {
+  /* top one */
+  /* bottom one */
+  /* right ones */
+  /* left ones */
+  /* scales */
+}
+.beon-notificacao.beon-notificacao--0deg .beon-notificacao__inner {
+  transform-origin: top center;
+}
+.beon-notificacao.beon-notificacao--180deg .beon-notificacao__inner {
+  transform-origin: bottom center;
+}
+.beon-notificacao.beon-notificacao--45deg .beon-notificacao__inner, .beon-notificacao.beon-notificacao--90deg .beon-notificacao__inner, .beon-notificacao.beon-notificacao--135deg .beon-notificacao__inner {
+  transform-origin: center right;
+}
+.beon-notificacao.beon-notificacao--225deg .beon-notificacao__inner, .beon-notificacao.beon-notificacao--270deg .beon-notificacao__inner, .beon-notificacao.beon-notificacao--315deg .beon-notificacao__inner {
+  transform-origin: center left;
+}
+.beon-notificacao.beon-notificacao--s50 .beon-notificacao__inner {
+  transform: scale(0.5);
+}
+.beon-notificacao.beon-notificacao--s75 .beon-notificacao__inner {
+  transform: scale(0.75);
+}
+
+.beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--padrao {
+  animation-name: pop-from-bottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+.beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal {
+  animation-timing-function: ease-out;
+  /* top one */
+  /* bottom one */
+  /* right ones */
+  /* left ones */
+}
+.beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--0deg {
+  animation-name: slide-from-top;
+  animation-duration: 0.8s;
+}
+.beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--180deg {
+  animation-name: slide-from-bottom;
+  animation-duration: 0.8s;
+}
+.beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--45deg, .beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--90deg, .beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--135deg {
+  animation-name: slide-from-right;
+  animation-duration: 1s;
+}
+.beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--225deg, .beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--270deg, .beon-notificacao.initialized.beon-notificacao--opened.beon-notificacao--horizontal.beon-notificacao--315deg {
+  animation-name: slide-from-left;
+  animation-duration: 1s;
+}
+.beon-notificacao.initialized.beon-notificacao--dismissed, .beon-notificacao.initialized.bn--hide, .beon-notificacao.initialized, .beon-notificacao.initialized.bn--none {
+  animation-name: fade-out;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-from-top {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+@keyframes slide-from-right {
+  from {
+    right: -35em;
+    opacity: 0;
+  }
+  to {
+    right: 20px;
+    opacity: 1;
+  }
+}
+@keyframes slide-from-bottom {
+  from {
+    bottom: -200px;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+@keyframes slide-from-left {
+  from {
+    left: -35em;
+    opacity: 0;
+  }
+  to {
+    left: 20px;
+    opacity: 1;
+  }
+}
+@keyframes pop-from-bottom {
+  from {
+    margin-top: 60px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.beon-notificacao--with-delta {
+  /* right side ones */
+  /* left side ones */
+}
+.beon-notificacao--with-delta.beon-notificacao--horizontal .beon-notificacao__delta {
+  display: none;
+}
+.beon-notificacao--with-delta.beon-notificacao--padrao .beon-notificacao__delta {
+  content: "";
+  position: absolute;
+  top: 50px;
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: none;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-width: 0;
+}
+.beon-notificacao--with-delta.beon-notificacao--45deg, .beon-notificacao--with-delta.beon-notificacao--90deg, .beon-notificacao--with-delta.beon-notificacao--135deg {
+  margin-right: 10px;
+}
+.beon-notificacao--with-delta.beon-notificacao--45deg .beon-notificacao__delta, .beon-notificacao--with-delta.beon-notificacao--90deg .beon-notificacao__delta, .beon-notificacao--with-delta.beon-notificacao--135deg .beon-notificacao__delta {
+  display: block;
+  right: -15px;
+  border-top-width: 1px !important;
+  border-right-width: 1px !important;
+}
+.beon-notificacao--with-delta.beon-notificacao--225deg, .beon-notificacao--with-delta.beon-notificacao--270deg, .beon-notificacao--with-delta.beon-notificacao--315deg {
+  margin-left: 10px;
+}
+.beon-notificacao--with-delta.beon-notificacao--225deg .beon-notificacao__delta, .beon-notificacao--with-delta.beon-notificacao--270deg .beon-notificacao__delta, .beon-notificacao--with-delta.beon-notificacao--315deg .beon-notificacao__delta {
+  display: block;
+  left: -15px;
+  transform: rotate(-45deg);
+  border-top-width: 1px !important;
+  border-left-width: 1px !important;
+}
+
+.beon-notificacao .beon-notificacao__figure {
+  display: none;
+  grid-area: figure;
+}
+.beon-notificacao.beon-notificacao--with-figure .beon-notificacao__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 100%;
+  min-height: 80px;
+  margin: 0 auto;
+}
+.beon-notificacao.beon-notificacao--with-figure .beon-notificacao__figure > i {
+  display: block;
+  width: 4em;
+  height: 4em;
+  font-style: normal;
+  background-color: transparent;
+}
+.beon-notificacao.beon-notificacao--with-figure .beon-notificacao__figure > i.beon-icon--emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 3.5em;
+  line-height: 20px;
+}
+.beon-notificacao.beon-notificacao--padrao.beon-notificacao--with-figure .beon-notificacao__figure {
+  min-height: 90px;
+}
+.beon-notificacao.beon-notificacao--horizontal.beon-notificacao--with-figure .beon-notificacao__figure {
+  width: 60px;
+  height: 100%;
+  min-height: 100%;
+}
+.beon-notificacao.beon-notificacao--horizontal.beon-notificacao--with-figure .beon-notificacao__headline {
+  padding-left: 10px;
+}
+.beon-notificacao.beon-notificacao--horizontal.beon-notificacao--with-figure .beon-notificacao__body {
+  padding-left: 10px;
+}
+
+.beon-notificacao .beon-notificacao__cta {
+  display: none;
+  grid-area: cta;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta.beon-notificacao__cta--with-message {
+  font-weight: normal !important;
+  text-transform: unset !important;
+  font-size: 1em !important;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta.beon-notificacao__cta--with-message .beon-notificacao__cta-label {
+  height: auto !important;
+  line-height: 1em;
+  padding-bottom: 20px;
+  color: inherit;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta.beon-notificacao__cta--with-message .beon-notificacao__cta-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  width: 100%;
+  padding-top: 20px;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta.beon-notificacao__cta--with-message .beon-notificacao__cta-message strong {
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta.beon-notificacao__cta--with-message .beon-notificacao__cta-message * {
+  color: inherit;
+}
+.beon-notificacao.beon-notificacao--with-cta .beon-notificacao__cta .beon-notificacao__cta-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  height: 4em;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.beon-notificacao.beon-notificacao--horizontal .beon-notificacao__cta {
+  width: auto;
+  max-width: 10em;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.beon-notificacao.beon-notificacao--with-bg .beon-notificacao__cta {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.beon-notificacao.beon-notificacao--with-bg .beon-notificacao__cta .beon-notificacao__cta-label {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.beon-notificacao.bn--with-clock .beon-clock,
+.beon-notificacao.bn--with-clock .bn-clock {
+  position: relative;
+  display: block;
+  z-index: 1;
+  width: 100%;
+  height: max-content;
+  margin-top: -5px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background: red;
+  color: black;
+  border-radius: 0 0 5px 5px;
+  font-size: 20px;
+  /* on notificatoins do not allow subtitles */
+}
+.beon-notificacao.bn--with-clock .beon-clock .bn-clock__subtle,
+.beon-notificacao.bn--with-clock .bn-clock .bn-clock__subtle {
+  display: none;
+}
+
+.beon-notificacao.beon-notificacao--dismissed {
+  opacity: 0;
+}
+.beon-notificacao .beon-notificacao__dismiss {
+  cursor: pointer;
+  display: block;
+}
+.beon-notificacao .beon-notificacao__dismiss.beon-notificacao__dismiss--text {
+  width: auto;
+  margin-right: 15px;
+  text-align: right;
+  font-size: 12px;
+  line-height: 2em;
+  text-shadow: 1px 1px 0px white, 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.beon-notificacao .beon-notificacao__dismiss.beon-notificacao__dismiss--times {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: -20px;
+  left: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+}
+.beon-notificacao .beon-notificacao__dismiss.beon-notificacao__dismiss--times:before {
+  content: "+";
+  display: block;
+  font-size: 30px;
+  transform: rotate(45deg);
+  font-weight: light;
+  text-shadow: 0 0 white;
+}
+
+.beon-notificacao__frete .beon-notificacao__headline > span {
+  font-size: 1.2em;
+}
+.beon-notificacao__frete .beon-notificacao__body > span {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+.beon-notificacao__frete.beon-notificacao--horizontal .beon-notificacao__cta--with-message .beon-notificacao__cta-label {
+  height: auto !important;
+  line-height: 1em;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.beon-notificacao {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* layout padrao */
+  /* horizontal */
+}
+@media (min-width: 1200px) {
+  .beon-notificacao {
+    padding: 0;
+  }
+}
+.beon-notificacao .beon-notificacao__inner {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  z-index: 7;
+  /* border: $notificacao-border-width $notificacao-border-style
+    $notificacao-border-color; */
+}
+.beon-notificacao .beon-notificacao__figure {
+  display: none;
+}
+.beon-notificacao .beon-notificacao__headline {
+  display: flex;
+  grid-area: headline;
+  font-size: 1em;
+  line-height: 1.1em;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.9);
+}
+.beon-notificacao .beon-notificacao__body {
+  display: flex;
+  grid-area: body;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 900px) {
+  .beon-notificacao.beon-notificacao--padrao {
+    width: unset;
+  }
+}
+.beon-notificacao.beon-notificacao--padrao, .beon-notificacao.beon-notificacao--horizontal {
+  font-size: 13px;
+  max-width: 35em;
+}
+@media (min-width: 1200px) {
+  .beon-notificacao.beon-notificacao--padrao, .beon-notificacao.beon-notificacao--horizontal {
+    width: 35em;
+  }
+}
+@media (max-width: 599px) {
+  .beon-notificacao.beon-notificacao--padrao, .beon-notificacao.beon-notificacao--horizontal {
+    transform: scale(0.8);
+    transform-origin: left bottom;
+    width: 450px;
+  }
+}
+.beon-notificacao.beon-notificacao--padrao .beon-notificacao__inner, .beon-notificacao.beon-notificacao--horizontal .beon-notificacao__inner {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 30px -5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  grid-template: "figure headline cta" "figure body cta" "clock clock clock"/max-content auto auto;
+}
+.beon-notificacao.beon-notificacao--padrao .beon-notificacao__headline, .beon-notificacao.beon-notificacao--horizontal .beon-notificacao__headline {
+  align-items: flex-end;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  min-width: 15em;
+}
+.beon-notificacao.beon-notificacao--padrao .beon-notificacao__body, .beon-notificacao.beon-notificacao--horizontal .beon-notificacao__body {
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 15em;
+}
+.beon-notificacao.beon-notificacao--padrao .beon-notificacao__cta, .beon-notificacao.beon-notificacao--horizontal .beon-notificacao__cta {
+  height: 100%;
+}
+.beon-notificacao.beon-notificacao--padrao .beon-notificacao__cta .beon-notificacao__cta-label, .beon-notificacao.beon-notificacao--horizontal .beon-notificacao__cta .beon-notificacao__cta-label {
+  text-align: center;
+}
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__component, .bn--with-clock.beon-notificacao.beon-notificacao--horizontal .beon-clock .bn-clock__component {
+  flex-direction: row;
+}
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__component .bn-clock__frags, .bn--with-clock.beon-notificacao.beon-notificacao--horizontal .beon-clock .bn-clock__component .bn-clock__frags {
+  font-size: 1em;
+}
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment, .bn--with-clock.beon-notificacao.beon-notificacao--horizontal .beon-clock .beon-clock__fragment,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag,
+.bn--with-clock.beon-notificacao.beon-notificacao--horizontal .beon-clock .bn-clock__frag {
+  padding-bottom: 0;
+}
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment:before, .bn--with-clock.beon-notificacao.beon-notificacao--horizontal .beon-clock .beon-clock__fragment:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--horizontal .beon-clock .bn-clock__frag:before {
+  display: none;
+  height: 0;
+}
+.beon-notificacao.beon-notificacao--padrao .beon-notificacao__delta, .beon-notificacao.beon-notificacao--horizontal .beon-notificacao__delta {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .beon-notificacao.beon-notificacao--padrao {
+    width: 20em;
+    font-size: 13px;
+  }
+  .beon-notificacao.beon-notificacao--padrao .beon-notificacao__inner {
+    border-radius: 5px;
+    box-shadow: 0 2px 30px -5px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    grid-template: "figure" "headline" "body" "cta" "clock"/1fr;
+  }
+  .beon-notificacao.beon-notificacao--padrao .beon-notificacao__headline {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .beon-notificacao.beon-notificacao--padrao .beon-notificacao__body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__component {
+    flex-direction: column;
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__component .bn-clock__headline {
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__component .bn-clock__frags {
+    font-size: 1.5em;
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag {
+    padding-bottom: 16px;
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag:before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 16px;
+    bottom: 0;
+    font-size: 10px;
+    font-family: sans-serif;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.beon-clock__fragment-d:before, .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.bn-clock__frag-d:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.beon-clock__fragment-d:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.bn-clock__frag-d:before {
+    content: "dias";
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.beon-clock__fragment-H:before, .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.bn-clock__frag-H:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.beon-clock__fragment-H:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.bn-clock__frag-H:before {
+    content: "hrs";
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.beon-clock__fragment-i:before, .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.bn-clock__frag-i:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.beon-clock__fragment-i:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.bn-clock__frag-i:before {
+    content: "min";
+  }
+  .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.beon-clock__fragment-s:before, .bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .beon-clock__fragment.bn-clock__frag-s:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.beon-clock__fragment-s:before,
+.bn--with-clock.beon-notificacao.beon-notificacao--padrao .beon-clock .bn-clock__frag.bn-clock__frag-s:before {
+    content: "seg";
+  }
+}
+.beon-clock,
+.bn-clock {
+  display: none;
+  font-size: 15px;
+  /* themes */
+  /* Fonts */
+  /* formats */
+  /* layout */
+  /* @import "./clock/direction"; */
+  /* modifications */
+}
+.beon-clock.initialized,
+.bn-clock.initialized {
+  display: block;
+}
+.beon-clock.hide,
+.bn-clock.hide {
+  display: none !important;
+}
+.beon-clock .beon-clock--light .fragment:before,
+.beon-clock .beon-clock--light .fragment:after,
+.bn-clock .beon-clock--light .fragment:before,
+.bn-clock .beon-clock--light .fragment:after {
+  color: rgba(255, 255, 255, 0.5);
+}
+.beon-clock .beon-clock,
+.bn-clock .beon-clock {
+  /* themes */
+  /* urgent state */
+}
+.beon-clock .beon-clock.beon-clock--dark,
+.bn-clock .beon-clock.beon-clock--dark {
+  color: #333;
+}
+.beon-clock .beon-clock.beon-clock--dark .fragment:before,
+.beon-clock .beon-clock.beon-clock--dark .fragment:after,
+.bn-clock .beon-clock.beon-clock--dark .fragment:before,
+.bn-clock .beon-clock.beon-clock--dark .fragment:after {
+  color: rgba(0, 0, 0, 0.5);
+}
+.beon-clock .beon-clock.beon-clock--urgent,
+.bn-clock .beon-clock.beon-clock--urgent {
+  color: red;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-name: urgent;
+}
+@keyframes urgent {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.beon-clock .beon-clock .beon-clock__fragments,
+.bn-clock .beon-clock .beon-clock__fragments {
+  font-family: "DS-Digital";
+}
+@font-face {
+  .beon-clock,
+.bn-clock {
+    font-family: "DS-Digital";
+    src: url("https://c.usebeon.io/fonts/ds-digital/ds-digital.eot");
+    /* IE9 Compat Modes */
+    src: url("https://c.usebeon.io/fonts/ds-digital/ds-digital.eot?#iefix") format("embedded-opentype"), url("https://c.usebeon.io/fonts/ds-digital/ds-digital.otf") format("opentype"), url("https://c.usebeon.io/fonts/ds-digital/ds-digital.svg") format("svg"), url("https://c.usebeon.io/fonts/ds-digital/ds-digital.ttf") format("truetype"), url("https://c.usebeon.io/fonts/ds-digital/ds-digital.woff") format("woff"), url("https://c.usebeon.io/fonts/ds-digital/ds-digital.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+.beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-width: 1.25em;
+  box-sizing: content-box;
+  line-height: 1em;
+  font-weight: bolder;
+  color: inherit;
+  font-size: inherit;
+}
+.beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-d.bn-clock__frag,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-d.bn-clock__frag {
+  padding-left: 0;
+}
+.beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-d.bn-clock__frag, .beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-H.bn-clock__frag, .beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-i.bn-clock__frag,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-d.bn-clock__frag,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-H.bn-clock__frag,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-i.bn-clock__frag {
+  padding-right: 0.5em;
+}
+.beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-d.bn-clock__frag:after, .beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-H.bn-clock__frag:after, .beon-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-i.bn-clock__frag:after,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-d.bn-clock__frag:after,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-H.bn-clock__frag:after,
+.bn-clock.bn-clock--digital .bn-clock__frags .bn-clock__frag-i.bn-clock__frag:after {
+  content: ":";
+  position: absolute;
+  display: block;
+  right: 0;
+  width: 0.5em;
+  text-align: center;
+}
+.beon-clock.bn-clock--digital .bn-clock__frags,
+.bn-clock.bn-clock--digital .bn-clock__frags {
+  display: flex;
+  width: max-content;
+  margin: 0 10px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  /* set ff */
+  font-size: 2em;
+}
+.beon-clock.bn-clock--digital .bn-clock__component,
+.bn-clock.bn-clock--digital .bn-clock__component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+}
+.beon-clock.bn-clock--digital .bn-clock__headline,
+.bn-clock.bn-clock--digital .bn-clock__headline {
+  color: inherit;
+}
+.beon-clock.bn-clock--digital .bn-clock__subtle,
+.bn-clock.bn-clock--digital .bn-clock__subtle {
+  color: inherit;
+}
+.beon-clock.bn-clock--digital .bn-clock__headline,
+.beon-clock.bn-clock--digital .bn-clock__subtle,
+.bn-clock.bn-clock--digital .bn-clock__headline,
+.bn-clock.bn-clock--digital .bn-clock__subtle {
+  color: inherit;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__component,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__headline,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__headline {
+  font-size: 1em;
+  color: inherit;
+  white-space: nowrap;
+  line-height: inherit;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__subtle,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__subtle {
+  font-size: 1em;
+  color: inherit;
+  white-space: nowrap;
+  line-height: inherit;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragments,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragments {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1em;
+  font-family: serif;
+  color: inherit;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-align: center;
+  font-weight: bold;
+  color: inherit;
+  line-height: inherit;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment:after,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment:after {
+  display: inline;
+  padding-left: 5px;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment:not(.beon-clock__fragment-d):before,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment:not(.beon-clock__fragment-d):before {
+  display: inline;
+  content: ",";
+  padding-right: 5px;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-d:after,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-d:after {
+  content: " dias";
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-H:after,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-H:after {
+  content: " horas";
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-i:after,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-i:after {
+  content: " minutos";
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-s:before,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-s:before {
+  content: "e";
+  padding-left: 5px;
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-s:after,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__fragment.beon-clock__fragment-s:after {
+  content: " segundos";
+}
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__headline,
+.beon-clock .beon-clock.beon-clock--inline .beon-clock__subtle,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__headline,
+.bn-clock .beon-clock.beon-clock--inline .beon-clock__subtle {
+  color: inherit;
+}
+.beon-clock .beon-clock,
+.bn-clock .beon-clock {
+  /* position */
+}
+.beon-clock .beon-clock.top-left, .beon-clock .beon-clock.top-middle, .beon-clock .beon-clock.top-right, .beon-clock .beon-clock.bottom-right, .beon-clock .beon-clock.bottom-middle, .beon-clock .beon-clock.bottom-left, .beon-clock .beon-clock.center, .beon-clock .beon-clock.center-left, .beon-clock .beon-clock.center-right,
+.bn-clock .beon-clock.top-left,
+.bn-clock .beon-clock.top-middle,
+.bn-clock .beon-clock.top-right,
+.bn-clock .beon-clock.bottom-right,
+.bn-clock .beon-clock.bottom-middle,
+.bn-clock .beon-clock.bottom-left,
+.bn-clock .beon-clock.center,
+.bn-clock .beon-clock.center-left,
+.bn-clock .beon-clock.center-right {
+  position: absolute;
+  z-index: 1000;
+}
+.beon-clock .beon-clock.center, .beon-clock .beon-clock.top-middle, .beon-clock .beon-clock.bottom-middle,
+.bn-clock .beon-clock.center,
+.bn-clock .beon-clock.top-middle,
+.bn-clock .beon-clock.bottom-middle {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.beon-clock .beon-clock.center, .beon-clock .beon-clock.center-left, .beon-clock .beon-clock.center-right,
+.bn-clock .beon-clock.center,
+.bn-clock .beon-clock.center-left,
+.bn-clock .beon-clock.center-right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.beon-clock .beon-clock.center,
+.bn-clock .beon-clock.center {
+  transform: translate(-50%, -50%);
+}
+.beon-clock .beon-clock.top-left,
+.bn-clock .beon-clock.top-left {
+  top: 0.5em;
+  left: 0.5em;
+}
+.beon-clock .beon-clock.top-middle,
+.bn-clock .beon-clock.top-middle {
+  top: 0.5em;
+}
+.beon-clock .beon-clock.top-right,
+.bn-clock .beon-clock.top-right {
+  top: 0.5em;
+  right: 0.5em;
+}
+.beon-clock .beon-clock.bottom-right,
+.bn-clock .beon-clock.bottom-right {
+  bottom: 0.5em;
+  right: 0.5em;
+}
+.beon-clock .beon-clock.bottom-middle,
+.bn-clock .beon-clock.bottom-middle {
+  bottom: 0.5em;
+}
+.beon-clock .beon-clock.bottom-left,
+.bn-clock .beon-clock.bottom-left {
+  bottom: 0.5em;
+  left: 0.5em;
+}
+.beon-clock .beon-clock.center-left,
+.bn-clock .beon-clock.center-left {
+  left: 0.5em;
+}
+.beon-clock .beon-clock.center-right,
+.bn-clock .beon-clock.center-right {
+  right: 0.5em;
+}
+.beon-clock .beon-clock.beon-clock--faixa,
+.bn-clock .beon-clock.beon-clock--faixa {
+  width: 100%;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead,
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock,
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead {
+  order: 1;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: 1em;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead strong,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead strong {
+  font-size: 1.1em;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock {
+  order: 2;
+  width: fit-content;
+  flex-direction: row;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-clock__fragments,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-clock__fragments {
+  font-size: 25px;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta {
+  order: 3;
+  width: 20%;
+  font-size: 1.2em;
+}
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta .beon-button,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta .beon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container {
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead,
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock,
+.beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta {
+    width: 100% !important;
+    align-self: center;
+    text-align: center;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead {
+    padding-right: 0 !important;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead > span,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__lead > span {
+    max-width: 100%;
+    text-align: center;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__clock {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-clock__subtle,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-clock__subtle {
+    display: none;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta,
+.bn-clock .beon-clock.beon-clock--faixa .beon-clock__container .beon-faixa__cta {
+    align-items: center;
+    padding-bottom: 10px !important;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__component,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__component {
+    flex-direction: column !important;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-faixa__lead {
+    padding-top: 10px !important;
+  }
+  .beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-faixa__clock {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__lead,
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__clock,
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__cta,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__cta {
+  display: flex;
+  width: auto !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__lead,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__lead {
+  order: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 0.5em;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__clock,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__clock {
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__fragments,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__fragments {
+  font-size: 1em;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__cta,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__cta {
+  order: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__cta .beon-button,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-faixa__cta .beon-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__component,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__component .beon-clock__fragments,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__component .beon-clock__fragments {
+  margin-left: 15px;
+  margin-right: 15px;
+  width: fit-content;
+}
+.beon-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__component .beon-clock__fragment:after,
+.bn-clock .beon-clock.beon-clock--faixa.beon-clock--narrow .beon-clock__container .beon-clock__component .beon-clock__fragment:after {
+  right: -12px;
+}
+.beon-clock .beon-clock.beon-clock--tag,
+.bn-clock .beon-clock.beon-clock--tag {
+  display: block;
+}
+.beon-clock .beon-clock.beon-clock--tag .beon-clock__container,
+.bn-clock .beon-clock.beon-clock--tag .beon-clock__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.beon-clock .beon-clock.beon-clock--tag .beon-clock__component,
+.bn-clock .beon-clock.beon-clock--tag .beon-clock__component {
+  width: fit-content;
+  padding: 0.4em;
+  text-align: center;
+  border: 0.1em solid;
+  border-radius: 0.5em;
+}
+.beon-clock .beon-clock.beon-clock--tag .beon-clock__fragments,
+.bn-clock .beon-clock.beon-clock--tag .beon-clock__fragments {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+.beon-clock .beon-clock.beon-clock--tag .beon-clock__fragment,
+.bn-clock .beon-clock.beon-clock--tag .beon-clock__fragment {
+  text-align: center;
+  padding-left: 15px;
+}
+.beon-clock .beon-clock.beon-clock--tag .beon-clock__fragment:after,
+.bn-clock .beon-clock.beon-clock--tag .beon-clock__fragment:after {
+  right: -11px;
+}
+.beon-clock .beon-clock.beon-clock--tag.beon-clock--big,
+.bn-clock .beon-clock.beon-clock--tag.beon-clock--big {
+  font-size: 25px;
+}
+.beon-clock.beon-clock--with-labels .beon-clock__fragment,
+.beon-clock.beon-clock--with-labels .bn-clock__frag, .beon-clock.bn-clock--with-labels .beon-clock__fragment,
+.beon-clock.bn-clock--with-labels .bn-clock__frag,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment,
+.bn-clock.beon-clock--with-labels .bn-clock__frag,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment,
+.bn-clock.bn-clock--with-labels .bn-clock__frag {
+  padding-bottom: 16px;
+}
+.beon-clock.beon-clock--with-labels .beon-clock__fragment:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag:before {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 16px;
+  bottom: 0;
+  font-size: 10px;
+  font-family: sans-serif;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+}
+.beon-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-d:before, .beon-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-d:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-d:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-d:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-d:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-d:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-d:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-d:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-d:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-d:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-d:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-d:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-d:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-d:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-d:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-d:before {
+  content: "dias";
+}
+.beon-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-H:before, .beon-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-H:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-H:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-H:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-H:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-H:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-H:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-H:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-H:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-H:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-H:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-H:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-H:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-H:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-H:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-H:before {
+  content: "hrs";
+}
+.beon-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-i:before, .beon-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-i:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-i:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-i:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-i:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-i:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-i:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-i:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-i:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-i:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-i:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-i:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-i:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-i:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-i:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-i:before {
+  content: "min";
+}
+.beon-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-s:before, .beon-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-s:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-s:before,
+.beon-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-s:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-s:before, .beon-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-s:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-s:before,
+.beon-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-s:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.beon-clock__fragment-s:before,
+.bn-clock.beon-clock--with-labels .beon-clock__fragment.bn-clock__frag-s:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.beon-clock__fragment-s:before,
+.bn-clock.beon-clock--with-labels .bn-clock__frag.bn-clock__frag-s:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.beon-clock__fragment-s:before,
+.bn-clock.bn-clock--with-labels .beon-clock__fragment.bn-clock__frag-s:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.beon-clock__fragment-s:before,
+.bn-clock.bn-clock--with-labels .bn-clock__frag.bn-clock__frag-s:before {
+  content: "seg";
+}
+.beon-clock .beon-clock.beon-clock--without-days .beon-clock__fragment-d,
+.bn-clock .beon-clock.beon-clock--without-days .beon-clock__fragment-d {
+  display: none;
+}
+.beon-clock .beon-clock.beon-clock--without-days .beon-clock__fragment-H:before,
+.bn-clock .beon-clock.beon-clock--without-days .beon-clock__fragment-H:before {
+  display: none !important;
+}
+.beon-clock .beon-clock.beon-clock--without-days.beon-clock--inline .beon-clock__fragment-i:before,
+.bn-clock .beon-clock.beon-clock--without-days.beon-clock--inline .beon-clock__fragment-i:before {
+  content: "e" !important;
+  padding-left: 5px;
+}
+
+.bn-banner {
+  display: block;
+  width: 100%;
+  background-color: #d8d8d8;
+  color: #333;
+  font-family: "Montserrat", "Helvetica Neue", Verdana, Arial, sans-serif;
+  /*  */
+}
+.bn-banner .bn-banner__inner {
+  height: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+.bn-banner .bn-banner__inner > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bn-banner.bn-banner--vertical {
+  height: max-content;
+}
+.bn-banner.bn-banner--vertical .bn-banner__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+}
+.bn-banner.bn-banner--vertical .bn-banner__inner > div {
+  width: 100%;
+  text-align: center;
+  margin: 0.5em auto;
+}
+.bn-banner.bn-banner--vertical .bn-banner__headline {
+  font-size: 1em !important;
+}
+.bn-banner.bn-banner--vertical.bn--with-clock .bn-clock,
+.bn-banner.bn-banner--vertical.bn--with-clock .beon-clock {
+  font-size: 1em;
+}
+.bn-banner.bn-banner--vertical.bn--with-clock .bn-clock .bn-clock__frags,
+.bn-banner.bn-banner--vertical.bn--with-clock .beon-clock .bn-clock__frags {
+  font-size: 2.5em !important;
+}
+.bn-banner.bn-banner--vertical.bn--with-clock .bn-clock .bn-clock__component,
+.bn-banner.bn-banner--vertical.bn--with-clock .beon-clock .bn-clock__component {
+  flex-direction: column;
+}
+.bn-banner.bn-banner--vertical.bn--with-clock .bn-clock .bn-clock__component .bn-clock__headline,
+.bn-banner.bn-banner--vertical.bn--with-clock .beon-clock .bn-clock__component .bn-clock__headline {
+  text-align: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.bn-banner.bn-banner--vertical.bn--with-clock .bn-clock .bn-clock__component .bn-clock__frags,
+.bn-banner.bn-banner--vertical.bn--with-clock .beon-clock .bn-clock__component .bn-clock__frags {
+  font-size: 1.5em;
+}
+@media (max-width: 599px) {
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) {
+    height: max-content;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner > div {
+    width: 100%;
+    text-align: center;
+    margin: 0.5em auto;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__headline {
+    font-size: 1em !important;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock {
+    font-size: 1em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frags,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frags {
+    font-size: 2.5em !important;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component {
+    flex-direction: column;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__headline,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__headline {
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__frags,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__frags {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 600px) {
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) {
+    height: max-content;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner > div {
+    width: 100%;
+    text-align: center;
+    margin: 0.5em auto;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__headline {
+    font-size: 1em !important;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock {
+    font-size: 1em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frags,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frags {
+    font-size: 2.5em !important;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component {
+    flex-direction: column;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__headline,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__headline {
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__frags,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__frags {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 900px) {
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) {
+    height: 120px;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner > div {
+    width: auto;
+    min-width: 30%;
+    box-sizing: border-box;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__inner .bn-banner__headline {
+    min-width: 40%;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__headline {
+    font-size: 1.5em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical) .bn-banner__cta .bn-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 65px;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__headline,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__headline {
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag {
+    font-size: 60px;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component {
+    flex-direction: column;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__headline,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__headline {
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__frags,
+.bn-banner.bn-banner--padrao:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__frags {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 600px) {
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) {
+    height: 60px;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__inner > div {
+    width: auto;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__headline {
+    font-size: 1em;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__cta {
+    justify-self: flex-end;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock {
+    font-size: 1em;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag {
+    font-size: 1.5em;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component {
+    flex-direction: row;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__frags,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__frags {
+    font-size: 1em;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag {
+    padding-bottom: 0;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag:before {
+    bottom: -12px;
+    font-size: 8px;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.beon-clock__fragment-d:before, .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.bn-clock__frag-d:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.beon-clock__fragment-d:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.bn-clock__frag-d:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.beon-clock__fragment-d:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.bn-clock__frag-d:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.beon-clock__fragment-d:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.bn-clock__frag-d:before {
+    content: "d";
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.beon-clock__fragment-H:before, .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.bn-clock__frag-H:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.beon-clock__fragment-H:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.bn-clock__frag-H:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.beon-clock__fragment-H:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.bn-clock__frag-H:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.beon-clock__fragment-H:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.bn-clock__frag-H:before {
+    content: "h";
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.beon-clock__fragment-i:before, .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.bn-clock__frag-i:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.beon-clock__fragment-i:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.bn-clock__frag-i:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.beon-clock__fragment-i:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.bn-clock__frag-i:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.beon-clock__fragment-i:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.bn-clock__frag-i:before {
+    content: "m";
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.beon-clock__fragment-s:before, .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .beon-clock__fragment.bn-clock__frag-s:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.beon-clock__fragment-s:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frag.bn-clock__frag-s:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.beon-clock__fragment-s:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .beon-clock__fragment.bn-clock__frag-s:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.beon-clock__fragment-s:before,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frag.bn-clock__frag-s:before {
+    content: "s";
+  }
+}
+@media (max-width: 599px) {
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) {
+    height: max-content;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__inner > div {
+    width: 100%;
+    text-align: center;
+    margin: 0.5em auto;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical) .bn-banner__headline {
+    font-size: 1em !important;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock {
+    font-size: 1em;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__frags,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__frags {
+    font-size: 2.5em !important;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component {
+    flex-direction: column;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__headline,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__headline {
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .bn-clock .bn-clock__component .bn-clock__frags,
+.bn-banner.bn-banner--compacto:not(.bn-banner--vertical).bn--with-clock .beon-clock .bn-clock__component .bn-clock__frags {
+    font-size: 1.5em;
+  }
+}
+.bn-banner.bn--with-clock .beon-clock,
+.bn-banner.bn--with-clock .bn-clock {
+  background: transparent;
+  color: #333;
+}
+.bn-banner .bn-banner__headline {
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.bn-banner .bn-banner__headline.bn--left {
+  text-align: left;
+}
+.bn-banner .bn-banner__headline.bn--right {
+  text-align: right;
+}
+.bn-banner .bn-banner__cta .bn-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  min-width: 170px;
+  max-width: 90%;
+  height: 100%;
+  min-height: 42px;
+  max-height: 60px;
+  background-color: transparent;
+  border: 2px solid;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+  line-height: 1em;
+}
